@@ -2,7 +2,7 @@ import { Translations } from "./types";
 
 let _translations: Translations;
 
-class Translation {
+class TranslationService {
 
     private fallbackLanguage = 'en'
 
@@ -53,6 +53,6 @@ class Translation {
     }
 }
 
-export const t = new Translation().t;
+export const t = new TranslationService().t;
 
-export default new Translation();
+export default new TranslationService();
