@@ -1,14 +1,18 @@
 .home-page {
+    text-align: center;
     font-family: "Raleway", sans-serif;
 }
 
 .hello-background {
     max-width: 270px;
+    margin: 0 auto;
 }
 
 .hello {
     font-size: 36px;
     font-weight: 500;
+    height: 100vh;
+    width: 100vw;
 }
 
 .text-center {
@@ -27,4 +31,61 @@
 
 .welcome-background {
     max-width: 250px;
+    margin: 0 auto;
+}
+
+.profile-picture {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-links {
+    font-size: 32px;
+    color: #111317;
+    margin-left: 16px;
+}
+
+.profile-links:first-child {
+    margin-left: 0;
+}
+
+.profile-links:hover {
+    color: #4b4e53;
+}
+
+.page-link {
+    font-weight: 600;
+    color: #111317;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .hello {
+        font-size: 32px;
+    }
+
+    .welcome {
+        font-size: 22px;
+    }
+
+    .link-company {
+        font-size: 22px;
+    }
+
+    .profile-picture {
+        width: 150px;
+        height: 150px;
+    }
+
+    .page-link {
+        font-size: 18px;
+    }
+
+    .profile-links {
+        font-size: 26px;
+        margin-left: 16px;
+    }
 }
