@@ -23,12 +23,12 @@ export class AppHome {
 
         return (
             <div class="home-page">
-                <div>
+                <div class="hello-background text-center">
                     <span class="hello">{t('hello')}</span>
                 </div>
                 <div>
-                    <span>{t('welcome')}&nbsp;</span>
-                    <a href={this.companyLink} rel="nofollow noreferrer noopener external" target="_blank">{t('currentCompany')}</a>
+                    <span class="welcome">{t('welcome')}&nbsp;</span>
+                    <a class="link-company" href={this.companyLink} rel="nofollow noreferrer noopener external" target="_blank">{t('currentCompany')}</a>
                 </div>
                 <div>
                     <img class="profile-picture" src="assets/images/profile-picture.jpeg"></img>

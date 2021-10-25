@@ -6,11 +6,24 @@
     width: 200px;
 }
 
+.home-page {
+    font-family: "Raleway", sans-serif;
+}
+
 .hello {
-    font-size: 30px;
+    font-size: 36px;
     font-weight: 500;
 }
 
-.home-page {
-    font-family: "Raleway", sans-serif;
+.hello-background {
+    max-width: 250px;
+}
+
+.welcome {
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.text-center {
+    text-align: center;
 }
