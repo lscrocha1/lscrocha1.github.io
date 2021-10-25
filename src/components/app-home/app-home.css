@@ -1,0 +1,16 @@
+.profile-picture {
+    border-radius: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+}
+
+.hello {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.home-page {
+    font-family: "Raleway", sans-serif;
+}
