@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppHome } from './app-home/app-home';
 import { AppProfile } from './app-profile/app-profile';
 import { AppContact } from './app-contact/app-contact';
+import { AppNavbar } from './app-navbar/app-navbar';
 
 @NgModule({
   declarations: [
     AppHome,
     AppProfile,
-    AppContact
+    AppContact,
+    AppNavbar,
   ],
   imports: [
     BrowserModule,

@@ -3,3 +3,18 @@
     height: 100vh;
     width: 100vw;
 }
+
+@media (max-width: 768px) {
+    .page-with-profile {
+        flex-direction: column;
+    }
+
+    .full-page {
+        height: 100vh;
+        width: 100vw;
+    }
+    
+    .page-with-menu {
+        margin-top: 56px;
+    }
+}
