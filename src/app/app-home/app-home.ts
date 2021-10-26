@@ -7,5 +7,5 @@ import { BaseComponent } from '../base/base-component';
     styleUrls: ['./app-home.scss']
 })
 export class AppHome extends BaseComponent {
-    companyLink: string = 'https://www.nava.com.br/';
+    
 }
