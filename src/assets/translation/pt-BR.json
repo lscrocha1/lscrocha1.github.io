@@ -4,5 +4,11 @@
     "currentCompany": "NAVA",
     "portfolio": "portfólio",
     "aboutMe": "sobre mim",
-    "contact": "contato"
+    "contact": "contato",
+    "contactName": "NOME",
+    "contactMessage": "MENSAGEM",
+    "contactEmail": "E-MAIL",
+    "contactConsent": "Eu autorizo que este site armazene minhas informações enviadas para que possam responder à minha pergunta",
+    "contactSendMessage": "Enviar Mensagem",
+    "contactGetInTouch": "Entre em contato"
 }
