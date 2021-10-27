@@ -2,23 +2,27 @@
     <div class="get-in-touch">
         {{t('contactGetInTouch')}}
     </div>
-    <form name="gform" id="gform" target="hidden_iframe" enctype="application/x-www-form-urlencoded"
+    <form [formGroup]="contactForm" name="gform" id="gform" target="hidden_iframe"
+        enctype="application/x-www-form-urlencoded" (ngSubmit)="onSubmit()"
         action="https://docs.google.com/forms/d/e/1FAIpQLSdoaqYbc5OWaoazuZyEzHEwZXN4oWJXd-n7emmFAhBB5_1CIw/formResponse?">
         <div class="contact-input">
             <div class="input-container">
-                <input id="entry.1563949243" name="entry.1563949243" class="input" type="text" required />
+                <input id="entry.1563949243" name="entry.1563949243" class="input" formControlName="name" type="text"
+                    required />
                 <label class="label" for="entry.1563949243">{{t('contactName')}}</label>
             </div>
         </div>
         <div class="contact-input">
             <div class="input-container">
-                <input id="entry.1707085558" type="email" name="entry.1707085558" class="input" type="text" required />
+                <input id="entry.1707085558" type="email" name="entry.1707085558" formControlName="email" class="input"
+                    type="text" required />
                 <label class="label" for="entry.1707085558">{{t('contactEmail')}}</label>
             </div>
         </div>
         <div>
             <div class="input-container">
-                <textarea rows="10" id="entry.148212086" name="entry.148212086" class="textarea" required></textarea>
+                <textarea rows="10" id="entry.148212086" name="entry.148212086" formControlName="message"
+                    class="textarea" required></textarea>
                 <label class="label" for="entry.148212086">{{t('contactMessage')}}</label>
             </div>
         </div>
@@ -26,9 +30,17 @@
             <input id="check-consent" type="checkbox" required>
             <label for="check-consent" class="label-consent">{{t('contactConsent')}}</label>
         </div>
-        <div class="btn-submit">
-            <button type="submit" class="button">{{t('contactSendMessage')}}</button>
-        </div>
+        <div *ngIf="!formSubmited; then showBtn else showSuccess"></div>
+        <ng-template #showBtn>
+            <div class="btn-submit">
+                <button type="submit" class="button">{{t('contactSendMessage')}}</button>
+            </div>
+        </ng-template>
+        <ng-template #showSuccess>
+            <div class="form-contact-sent">
+                <span>{{t('contactSent')}}</span>
+            </div>
+        </ng-template>
     </form>
     <iframe name="hidden_iframe" id="hidden_iframe" style="display:none"></iframe>
 </div>
