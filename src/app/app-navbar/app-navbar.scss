@@ -1,11 +1,6 @@
-.navbar-footer {
-    display: none;
-}
-
 @media (max-width: 768px) {
-    .navbar-footer {
+    .navbar-header {
         background-color: #111317;
-        padding: 16px;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -15,8 +10,13 @@
         min-width: 100vw;
         top: 0;
         left: 0;
-        height: 56px;
-        display: flex;
+        height: 0;
+        z-index: 1;
+        padding-left: 16px;
+        padding-right: 16px;
+        transition: height 0.3s, padding 0.3s;
+        transition-timing-function: ease-in-out;
+        transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
     }
 
     .logo {
@@ -48,5 +48,7 @@
     .sticky {
         position: fixed;
         display: flex;
+        height: 56px;
+        padding: 16px;
     }
 }

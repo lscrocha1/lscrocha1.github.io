@@ -11,5 +11,8 @@
     "contactConsent": "I consent to having this website store my submitted information so they can respond to my enquiry",
     "contactSendMessage": "Send Message",
     "contactGetInTouch": "Get in touch",
-    "contactSent": "Thank you for getting in touch!"
+    "contactSent": "Thank you for getting in touch!",
+    "footerFollowMe": "Follow me",
+    "footerPrivacyLink": "Privacy policy",
+    "footerTermOfUse": "Terms of Use"
 }

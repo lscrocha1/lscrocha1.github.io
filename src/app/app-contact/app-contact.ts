@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BaseComponent } from '../base/base-component';
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { FormGroup, FormBuilder, FormControl } from "@angular/forms";
 
 @Component({
     selector: 'app-contact',
@@ -15,14 +15,16 @@ export class AppContact extends BaseComponent {
     constructor(private formBuilder: FormBuilder) {
         super();
 
-        this.contactForm = this.formBuilder.group({
-            name: [''],
-            email: [''],
-            message: ['']
-        });
+        this.contactForm = new FormGroup({
+            name: new FormControl(''),
+            email: new FormControl(''),
+            message: new FormControl('')
+        })
     }
 
     onSubmit() {
-        this.formSubmited = true;
+        if (this.contactForm.valid) {
+            this.formSubmited = true;
+        }
     }
 }
