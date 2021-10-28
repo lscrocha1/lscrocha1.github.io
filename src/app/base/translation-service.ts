@@ -10,7 +10,7 @@ class TranslationService {
 
     private languageKey: string = "lscrocha1-token-language";
 
-    private getCurrentSelectedLanguage() {
+    public getCurrentSelectedLanguage() {
         return localStorage.getItem(this.languageKey);
     }
 

@@ -1,0 +1,79 @@
+.about-me-page {
+    font-family: "Raleway", sans-serif;
+    margin: 0 auto;
+    margin-top: 48px;
+    max-width: 720px;
+    padding: 16px;
+}
+
+.about-me-title {
+    font-size: 48px;
+    margin-bottom: 48px;
+    text-align: center;
+}
+
+.about-me-text {
+    font-size: 18px;
+    white-space: pre-line;
+    text-align: justify;
+}
+
+.experiences-title {
+    margin-top: 48px;
+    margin-bottom: 48px;
+    font-size: 36px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.job-title {
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.job-period {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.experience-job {
+    margin-bottom: 64px;
+}
+
+.iconify-calendar {
+    margin-right: 8px;
+}
+
+.job-company {
+    text-align: center;
+}
+
+.company-link {
+    color: rgb(60, 121, 211);
+    text-decoration: none;
+    text-transform: none;
+    text-align: center;
+}
+
+.company-link:hover {
+    color: rgb(40, 87, 158);
+}
+
+.job-description {
+    white-space: pre-line;
+    text-align: justify;
+}
+
+@media (max-width: 768px) {
+    .job-title {
+        font-size: 20px;
+    }
+}
