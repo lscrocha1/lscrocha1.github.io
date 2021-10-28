@@ -33,9 +33,15 @@
     padding-top: 32px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .profile-links:first-letter {
     text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .footer-links {
+        justify-content: space-between;
+    }
 }

@@ -3,6 +3,8 @@
     padding-right: 32px;
     font-family: "Raleway", sans-serif;
     padding-bottom: 48px;
+    margin: 0 auto;
+    max-width: 720px;
 }
 
 .get-in-touch {
@@ -28,6 +30,11 @@
     background-color: #111317;
     font-family: "Raleway", sans-serif;
     font-size: 18px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #46484b;
 }
 
 .btn-submit {
@@ -44,4 +51,11 @@
     background-color: #64caa3;
     margin-top: 32px;
     border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .contact-page {
+        margin: unset;
+        max-width: unset;
+    }
 }
