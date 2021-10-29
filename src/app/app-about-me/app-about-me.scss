@@ -2,7 +2,7 @@
     font-family: "Raleway", sans-serif;
     margin: 0 auto;
     margin-top: 48px;
-    margin-bottom: 48px;
+    margin-bottom: 88px;
     max-width: 720px;
     padding: 16px;
 }
@@ -20,7 +20,7 @@
 }
 
 .experiences-title {
-    margin-top: 64px;
+    margin-top: 48px;
     margin-bottom: 48px;
     font-size: 36px;
     font-weight: 300;
@@ -46,7 +46,7 @@
 }
 
 .experience-job {
-    margin-bottom: 64px;
+    margin-bottom: 36px;
 }
 
 .iconify-calendar {
@@ -71,6 +71,31 @@
 .job-description {
     white-space: pre-line;
     text-align: justify;
+}
+
+.download {
+    text-align: center;
+    margin-top: 52px;
+}
+
+.iconify-download {
+    margin-right: 8px;
+    margin-bottom: -2px;
+}
+
+.download-link {
+    padding: 16px;
+    background-color: #b6b3b3;
+    text-decoration: none;
+    text-transform: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.download-link:hover {
+    background-color: #8f8e8e;
 }
 
 @media (max-width: 768px) {

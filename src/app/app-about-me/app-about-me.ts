@@ -10,6 +10,10 @@ import { Job } from '../base/types';
 })
 export class AppAboutMe extends BaseComponent {
 
+    currentLanguage = translationService.getCurrentSelectedLanguage();
+
+    downloadLink = `/assets/cv/cv-${translationService.getCurrentSelectedLanguage()}.pdf`;
+
     experienceAge = (new Date().getFullYear() - 2015).toString();
 
     jobs: Job[] = [];
@@ -19,8 +23,6 @@ export class AppAboutMe extends BaseComponent {
     }
 
     async loadJobs() {
-        let currentLanguage = translationService.getCurrentSelectedLanguage();
-
-        this.jobs = await fetch(`/assets/translation/${currentLanguage}.json`).then(e => e.json()).then(e => e.jobs);
+        this.jobs = await fetch(`/assets/translation/${this.currentLanguage}.json`).then(e => e.json()).then(e => e.jobs);
     }
 }
