@@ -15,10 +15,12 @@
         <a class="page-link" href="#">{{t('portfolio')}}</a>
     </div>
     <div class="profile-div">
-        <a class="page-link" href="#">{{t('aboutMe')}}</a>
+        <a class="page-link" [attr.href]="!isMobile ? ('#aboutMe') : ('#')"
+            (click)="linkClick('aboutMe')">{{t('aboutMe')}}</a>
     </div>
     <div class="profile-div">
-        <a class="page-link" href="#">{{t('contact')}}</a>
+        <a class="page-link" [attr.href]="!isMobile ? ('#contact') : ('#')"
+            (click)="linkClick('contact')">{{t('contact')}}</a>
     </div>
     <div class="profile-links-margin">
         <a class="profile-links" href="mailto:dev.lucascrocha@gmail.com">

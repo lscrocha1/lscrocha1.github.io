@@ -7,10 +7,12 @@
             <a class="navbar-link" href="#">{{t('portfolio')}}</a>
         </div>
         <div class="navbar-link-background">
-            <a class="navbar-link" href="#">{{t('aboutMe')}}</a>
+            <a class="navbar-link" [attr.href]="!isMobile ? ('#aboutMe') : ('#')"
+                (click)="linkClick('aboutMe')">{{t('aboutMe')}}</a>
         </div>
         <div class="navbar-link-background">
-            <a class="navbar-link" href="#">{{t('contact')}}</a>
+            <a class="navbar-link" [attr.href]="!isMobile ? ('#contact') : ('#')"
+                (click)="linkClick('contact')">{{t('contact')}}</a>
         </div>
     </div>
 </div>

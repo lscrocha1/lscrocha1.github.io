@@ -29,12 +29,10 @@
                 rel="nofollow noreferrer noopener external">
                 {{t('portfolio')}}
             </a>
-            <a class="profile-links" href="https://www.linkedin.com/in/lucascrocha" target="_blank"
-                rel="nofollow noreferrer noopener external">
+            <a class="profile-links" [attr.href]="!isMobile ? ('#aboutMe') : ('#')" (click)="linkClick('aboutMe')">
                 {{t('aboutMe')}}
             </a>
-            <a class="profile-links" href="https://www.github.com/lscrocha1" target="_blank"
-                rel="nofollow noreferrer noopener external">
+            <a class=" profile-links" [attr.href]="!isMobile ? ('#contact') : ('#')" (click)="linkClick('contact')">
                 {{t('contact')}}
             </a>
             <a class="profile-links" href="https://www.github.com/lscrocha1" target="_blank"
