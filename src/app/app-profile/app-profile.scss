@@ -55,7 +55,7 @@
 
 .profile-links-margin {
     margin-top: 12px;
-    margin-bottom: 36px;
+    margin-bottom: 16px;
 }
 
 .profile-links {
@@ -77,6 +77,27 @@
     color: white;
     font-size: 22px;
     text-decoration: none;
+}
+
+.language-changer {
+    width: 70 px;
+    margin: 0 auto;
+    margin-bottom: 16px;
+    padding: 8px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.iconify-globe {
+    margin-right: 8px;
+}
+
+.language-changer:hover {
+background-color: #4d4e50;
 }
 
 @media (max-width: 768px) {

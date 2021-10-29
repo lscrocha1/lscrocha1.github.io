@@ -16,7 +16,7 @@
     "footerPrivacyLink": "Privacy policy",
     "footerTermOfUse": "Terms of Use",
     "aboutMePageTitle": "About Me",
-    "aboutMeText": "I am Brazilian, I have a degree in computer science and I have about age of experience as a programmer.\n\nI am a fullstack developer, mainly focused on .NET Core (C#) and platforms with Javascript/Typescript such as Angular, Vue, Stencil and React.\n\nI have worked on several projects in various areas, the biggest ones were:\n\n- Mapfre, in the insurance and capitalization system;\n- Banco Safra, in the open banking and loans system;\n- Motiva, URA system (automatic call robot);\nI have advanced English for both writing and conversation.",
+    "aboutMeText": "I am Brazilian, I have a degree in computer science and I have about age of experience as a programmer.\n\nI am a fullstack developer, mainly focused on .NET Core (C#) and platforms with Javascript/Typescript such as Angular, Vue, Stencil and React.\n\nI have worked on several projects in various areas, the biggest ones were:\n\n- Mapfre, in the insurance and capitalization system;\n- Banco Safra, in the open banking and loans system;\n- Motiva, URA system (automatic call robot);\n\nI have advanced English for both writing and conversation.",
     "aboutMeExperience": "Experiences",
     "jobs": [
         {

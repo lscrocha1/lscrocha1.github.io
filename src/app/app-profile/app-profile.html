@@ -47,4 +47,8 @@
             <span class="iconify" data-icon="mdi:youtube"></span>
         </a>
     </div>
+    <div class="language-changer" (click)="changeLanguage()">
+        <span class="iconify iconify-globe" data-icon="bi:globe"></span>
+        {{currentLanguage == 'en' ? 'PT' : 'EN'}}
+    </div>
 </div>
