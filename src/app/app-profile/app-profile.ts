@@ -13,7 +13,7 @@ export class AppProfile extends BaseComponent {
 
     currentLanguage = translationService.getCurrentSelectedLanguage();
 
-    companyLink: string = 'https://www.nava.com.br/';
+    companyLink: string = 'https://www.programmers.com.br/';
 
     linkClick(elementId: string) {
         scrollTo(elementId);

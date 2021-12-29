@@ -8,6 +8,7 @@ import { AppContact } from './app-contact/app-contact';
 import { AppNavbar } from './app-navbar/app-navbar';
 import { AppFooter } from './app-footer/app-footer';
 import { AppAboutMe } from './app-about-me/app-about-me';
+import { AppPortfolio } from './app-portfolio/app-portfolio';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AppAboutMe } from './app-about-me/app-about-me';
     AppContact,
     AppNavbar,
     AppFooter,
-    AppAboutMe
+    AppAboutMe,
+    AppPortfolio
   ],
   imports: [
     BrowserModule,
