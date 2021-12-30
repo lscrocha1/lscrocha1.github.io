@@ -1,0 +1,68 @@
+.input-container {
+    position: relative;
+}
+
+.input,
+.textarea {
+    border: 0;
+    border-bottom: 2px solid #111317;
+    outline: none;
+    transition: 0.2s ease-in-out;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+}
+
+.label {
+    top: 0;
+    left: 0;
+    right: 0;
+    color: #111317;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    font-size: 1rem;
+    cursor: text;
+    transition: 0.2s ease-in-out;
+    font-family: "Raleway", sans-serif;
+    box-sizing: border-box;
+}
+
+.input,
+.textarea,
+.label {
+    width: 100%;
+    height: 3rem;
+    font-size: 1rem;
+}
+
+/* Interation */
+.input:valid,
+.input:focus {
+    border-bottom: 2px solid #111317;
+}
+
+.textarea:valid,
+.textarea:focus {
+    border-bottom: 2px solid #111317;
+}
+
+.input:valid + label,
+.input:focus + label {
+    color: #111317;
+    font-size: 0.8rem;
+    top: -30px;
+    pointer-events: none;
+}
+
+.textarea:valid + label,
+.textarea:focus + label {
+    color: #111317;
+    font-size: 0.8rem;
+    top: -35px;
+    pointer-events: none;
+}
+
+.textarea {
+    resize: none;
+    height: auto;
+}

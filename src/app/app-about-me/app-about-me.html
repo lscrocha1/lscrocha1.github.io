@@ -1,0 +1,39 @@
+<div class="about-me-page">
+    <div class="about-me-title">
+        {{t('aboutMePageTitle')}}
+    </div>
+    <div class="about-me-text">
+        {{t('aboutMeText').replace('age', experienceAge)}}
+    </div>
+    <div class="experiences-title">
+        {{t('aboutMeExperience')}}
+    </div>
+    <div class="experiences">
+        <div *ngFor="let job of jobs">
+            <div class="experience-job">
+                <div class="job-title">
+                    {{job.title}}
+                </div>
+                <div class="job-company">
+                    <a target="_blank" class="company-link" rel="nofollow noreferrer noopener external"
+                        [attr.href]="job.companyLink">
+                        {{job.company}}
+                    </a>
+                </div>
+                <div class="job-period">
+                    <span class="iconify iconify-calendar" data-icon="mdi:calendar-text"></span>
+                    {{job.period}}
+                </div>
+                <div class="job-description">
+                    {{job.description}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="download">
+        <a [attr.href]="downloadLink" class="download-link" download="Lucas Rocha - CV.pdf">
+            <span class="iconify iconify-download" data-icon="ant-design:download-outlined"></span>
+            Download CV
+        </a>
+    </div>
+</div>

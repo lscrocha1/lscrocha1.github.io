@@ -1,0 +1,51 @@
+<div class="footer">
+    <div class="footer-links">
+        <div class="block-link">
+            <span class="block-link-header">{{t('footerFollowMe')}}</span>
+            <a class="profile-links" href="https://www.instagram.com/lscrocha1/" target="_blank"
+                rel="nofollow noreferrer noopener external">
+                Instagram
+            </a>
+            <a class="profile-links" href="https://www.linkedin.com/in/lucascrocha" target="_blank"
+                rel="nofollow noreferrer noopener external">
+                LinkedIn
+            </a>
+            <a class="profile-links" href="https://www.github.com/lscrocha1" target="_blank"
+                rel="nofollow noreferrer noopener external">
+                GitHub
+            </a>
+            <a class="profile-links" href="https://www.twitch.tv/lecas" target="_blank"
+                rel="nofollow noreferrer noopener external">
+                Twitch
+            </a>
+            <a class="profile-links" href="https://www.youtube.com/channel/UCmBKSMYDh8T6aKJi88taw7w" target="_blank"
+                rel="nofollow noreferrer noopener external">
+                Youtube
+            </a>
+        </div>
+        <div class="block-link">
+            <span class="block-link-header">Links</span>
+            <a class="profile-links" href="https://www.instagram.com/lscrocha1/" target="_blank"
+                rel="nofollow noreferrer noopener external">
+                {{t('portfolio')}}
+            </a>
+            <a class="profile-links" [attr.href]="!isMobile ? ('#aboutMe') : ('#')" (click)="linkClick('aboutMe')">
+                {{t('aboutMe')}}
+            </a>
+            <a class=" profile-links" [attr.href]="!isMobile ? ('#contact') : ('#')" (click)="linkClick('contact')">
+                {{t('contact')}}
+            </a>
+            <a class="profile-links" href="https://www.github.com/lscrocha1" target="_blank"
+                rel="nofollow noreferrer noopener external">
+                {{t('footerTermOfUse')}}
+            </a>
+            <a class="profile-links" href="https://www.github.com/lscrocha1" target="_blank"
+                rel="nofollow noreferrer noopener external">
+                {{t('footerPrivacyLink')}}
+            </a>
+        </div>
+    </div>
+    <div class="copyright-block">
+        © {{ year }} - Lucas Rocha
+    </div>
+</div>
