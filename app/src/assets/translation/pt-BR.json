@@ -20,13 +20,13 @@
     "aboutMeExperience": "Experiências",
     "portfolioPageTitle": "Portfólio",
     "portfolioFaxinexLink": "neste link",
-    "portfolioFaxinexDescription": "Fis a project in which I was responsible for developing the APIs and the architecture of the backend, developed in C# (.NET 6) and MySQL.\n\n The application is available ",
+    "portfolioFaxinexDescription": "Faxinex é um projeto em que fui responsável por desenvolver as APIs e a arquitetura do backend, desenvolvido em C# (.NET 6) e MySQL.\n\nO aplicativo está disponível",
     "jobs": [
         {
             "title": "Analista de Sistemas Sênior",
             "company": "CI&T",
             "companyLink": "https://ciandt.com/",
-            "period": "January, 2022 - Current",
+            "period": "Janeiro, 2022 - Atualmente",
             "description": "Trabalhando em um cliente internacional como desenvolvedor backend .NET Core com microserviços, postgres e outras tecnologias."
         },
         {
