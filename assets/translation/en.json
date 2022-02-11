@@ -1,7 +1,7 @@
 {
     "hello": "Hi! my name is Lucas Rocha.",
     "welcome": "I'm a fullstack developer, currently working at",
-    "currentCompany": "NAVA",
+    "currentCompany": "CI&T",
     "portfolio": "portfolio",
     "aboutMe": "about me",
     "contact": "contact",
@@ -19,13 +19,15 @@
     "aboutMeText": "I am Brazilian, I have a degree in computer science and I have about age of experience as a programmer.\n\nI am a fullstack developer, mainly focused on .NET Core (C#) and platforms with Javascript/Typescript such as Angular, Vue, Stencil and React.\n\nI have worked on several projects in various areas, the biggest ones were:\n\n- Mapfre, in the insurance and capitalization system;\n- Banco Safra, in the open banking and loans system;\n- Motiva, URA system (automatic call robot);\n\nI have advanced English for both writing and conversation.",
     "aboutMeExperience": "Experiences",
     "portfolioPageTitle": "Portfolio",
+    "portfolioFaxinexLink": "in this link",
+    "portfolioFaxinexDescription": "Faxinex é um projeto em que fui responsável por desenvolver as APIs e a arquitetura do backend, desenvolvido em C# (.NET 6) e MySQL.\n\nO aplicativo está disponível ",
     "jobs": [
         {
-            "title": "Analista Desenvolvedor Sênior",
-            "company": "NAVA - Technology for Business",
-            "companyLink": "https://www.nava.com.br/",
-            "period": "January, 2021 - Current",
-            "description": "Allocated at Banco Safra, which is located in São Paulo, but working remotely, being responsible for the development of new processes, creating APIs, unit tests, integration tests, background services, and web applications.\n\nThe tools used are .NET Core, RabbitMQ, Kafka, Angular, XUnit, MongoDb, SQL, Apache Phoenix, DynamoDb, DocumentDb and others."
+            "title": "Senior System Analyst",
+            "company": "CI&T",
+            "companyLink": "https://ciandt.com/",
+            "period": "January, 2022 - Current",
+            "description": "Working for a international client as .NET Core backend developer with microservices, postgres and other technologies."
         },
         {
             "title": ".NET Specialist",
@@ -33,6 +35,13 @@
             "companyLink": "https://www.materialize.pro/",
             "period": "October, 2021 - Current",
             "description": "Partner as a .NET Specialist to develop new solutions and systems."
+        },
+        {
+            "title": "Analista Desenvolvedor Sênior",
+            "company": "NAVA - Technology for Business",
+            "companyLink": "https://www.nava.com.br/",
+            "period": "January, 2021 - January, 2022",
+            "description": "Allocated at Banco Safra, which is located in São Paulo, but working remotely, being responsible for the development of new processes, creating APIs, unit tests, integration tests, background services, and web applications.\n\nThe tools used are .NET Core, RabbitMQ, Kafka, Angular, XUnit, MongoDb, SQL, Apache Phoenix, DynamoDb, DocumentDb and others."
         },
         {
             "title": ".NET Developer",
