@@ -1,18 +1,16 @@
 <div class="navbar-header" [class.sticky]="sticky">
     <div>
-        <img class="logo" src="/assets/images/lr.png">
+        <img class="logo" alt="Lucas Rocha" src="/assets/images/lr.png">
     </div>
     <div class="navbar-links">
         <div class="navbar-link-background">
             <a class="navbar-link" href="#">{{t('portfolio')}}</a>
         </div>
         <div class="navbar-link-background">
-            <a class="navbar-link" [attr.href]="!isMobile ? ('#aboutMe') : ('#')"
-                (click)="linkClick('aboutMe')">{{t('aboutMe')}}</a>
+            <a class="navbar-link" href="#aboutMe">{{t('aboutMe')}}</a>
         </div>
         <div class="navbar-link-background">
-            <a class="navbar-link" [attr.href]="!isMobile ? ('#contact') : ('#')"
-                (click)="linkClick('contact')">{{t('contact')}}</a>
+            <a class="navbar-link" href="#contact">{{t('contact')}}</a>
         </div>
     </div>
 </div>

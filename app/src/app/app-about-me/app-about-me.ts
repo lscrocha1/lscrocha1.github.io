@@ -14,7 +14,7 @@ export class AppAboutMe extends BaseComponent {
 
     downloadLink = `/assets/cv/cv-${translationService.getCurrentSelectedLanguage()}.pdf`;
 
-    experienceAge = (new Date().getFullYear() - 2015).toString();
+    experienceAge = (new Date().getFullYear() - 2016).toString();
 
     jobs: Job[] = [];
 

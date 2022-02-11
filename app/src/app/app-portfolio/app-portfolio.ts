@@ -7,5 +7,5 @@ import { BaseComponent } from '../base/base-component';
     styleUrls: ['./app-portfolio.scss']
 })
 export class AppPortfolio extends BaseComponent {
-    
+    faxinexUrl: string = "https://faxinex.app.br/";
 }
