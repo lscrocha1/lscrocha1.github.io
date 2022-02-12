@@ -25,22 +25,19 @@
         </div>
         <div class="block-link">
             <span class="block-link-header">Links</span>
-            <a class="profile-links" href="https://www.instagram.com/lscrocha1/" target="_blank"
-                rel="nofollow noreferrer noopener external">
+            <a class="profile-links" [attr.href]="!isMobile ? ('#portfolio') : ('#')" (click)="linkClick('portfolio')">
                 {{t('portfolio')}}
             </a>
-            <a class="profile-links" [attr.href]="!isMobile ? ('#aboutMe') : ('#')" (click)="linkClick('aboutMe')">
+            <a class=" profile-links" [attr.href]="!isMobile ? ('#aboutMe') : ('#')" (click)="linkClick('aboutMe')">
                 {{t('aboutMe')}}
             </a>
             <a class=" profile-links" [attr.href]="!isMobile ? ('#contact') : ('#')" (click)="linkClick('contact')">
                 {{t('contact')}}
             </a>
-            <a class="profile-links" href="https://www.github.com/lscrocha1" target="_blank"
-                rel="nofollow noreferrer noopener external">
+            <a class="profile-links" href="#" (click)="modalTermsOfUse.toggle()">
                 {{t('footerTermOfUse')}}
             </a>
-            <a class="profile-links" href="https://www.github.com/lscrocha1" target="_blank"
-                rel="nofollow noreferrer noopener external">
+            <a class="profile-links" href="#" (click)="modalPrivacy.toggle()">
                 {{t('footerPrivacyLink')}}
             </a>
         </div>
@@ -48,4 +45,10 @@
     <div class="copyright-block">
         © {{ year }} - Lucas Rocha
     </div>
+    <app-modal #modalTermsOfUse>
+        <app-terms-of-use></app-terms-of-use>
+    </app-modal>
+    <app-modal #modalPrivacy>
+        <app-privacy-terms></app-privacy-terms>
+    </app-modal>
 </div>

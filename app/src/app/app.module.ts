@@ -9,6 +9,9 @@ import { AppNavbar } from './app-navbar/app-navbar';
 import { AppFooter } from './app-footer/app-footer';
 import { AppAboutMe } from './app-about-me/app-about-me';
 import { AppPortfolio } from './app-portfolio/app-portfolio';
+import { AppPrivacyTerms } from './app-privacy-terms/app-privacy-terms';
+import { AppTermsOfUse } from './app-terms-of-use/app-terms-of-use';
+import { AppModal } from './app-modal/app-modal';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { AppPortfolio } from './app-portfolio/app-portfolio';
     AppNavbar,
     AppFooter,
     AppAboutMe,
-    AppPortfolio
+    AppPortfolio,
+    AppPrivacyTerms,
+    AppTermsOfUse,
+    AppModal
   ],
   imports: [
     BrowserModule,

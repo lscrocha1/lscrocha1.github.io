@@ -12,9 +12,10 @@
         <img class="profile-picture" alt="Profile picture" src="/assets/images/profile-picture.jpeg" />
     </div>
     <div class="profile-div">
-        <a class="page-link" href="#">{{t('portfolio')}}</a>
+        <a class="page-link" [attr.href]="!isMobile ? ('#portfolio') : ('#')"
+            (click)="linkClick('portfolio')">{{t('portfolio')}}</a>
     </div>
-    <div class="profile-div">
+    <div class=" profile-div">
         <a class="page-link" [attr.href]="!isMobile ? ('#aboutMe') : ('#')"
             (click)="linkClick('aboutMe')">{{t('aboutMe')}}</a>
     </div>
@@ -23,7 +24,7 @@
             (click)="linkClick('contact')">{{t('contact')}}</a>
     </div>
     <div class="profile-links-margin">
-        <a class="profile-links email" href="mailto:dev.lucascrocha@gmail.com">
+        <a class="profile-links email" href="mailto:contato@lscrocha.com.br">
             <span class="iconify" data-icon="mdi:email"></span>
         </a>
         <a class="profile-links instagram" href="https://www.instagram.com/lscrocha1/" target="_blank"
