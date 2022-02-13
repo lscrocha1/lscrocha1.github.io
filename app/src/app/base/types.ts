@@ -17,3 +17,33 @@ export interface ListPostDto {
     imageDisplay: string;
     createdAt: string;
 }
+
+export interface PostDto {
+    id: number;
+    title: string;
+    description: string;
+    imageDisplay: string;
+    content: string;
+    createdAt: string;
+    updatedAt: string | null;
+    tags: TagDto[];
+    images: ImageDto[];
+    comments: CommentDto[];
+}
+
+export interface TagDto {
+    id: number;
+    name: string;
+}
+
+export interface ImageDto {
+    id: number;
+    link: string;
+}
+
+export interface CommentDto {
+    id: number;
+    userName: string;
+    content: string;
+    createdAt: string;
+}

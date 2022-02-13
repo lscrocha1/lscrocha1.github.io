@@ -14,6 +14,7 @@ import { AppModal } from './app-modal/app-modal';
 import { AppComponent } from './app-component/app-component';
 import { AppBlog } from './app-blog/app-blog';
 import { AppBlogHeader } from './app-blog-header/app-blog-header';
+import { AppBlogDetail } from './app-blog-detail/app-blog-detail';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AppBlogHeader } from './app-blog-header/app-blog-header';
     AppModal,
     AppComponent,
     AppBlog,
-    AppBlogHeader
+    AppBlogHeader,
+    AppBlogDetail
   ],
   imports: [
     BrowserModule,
