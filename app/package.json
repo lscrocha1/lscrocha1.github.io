@@ -3,10 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "npm run env-dev && ng serve",
+    "build": "npm run env-prod && ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "env-dev": "node ./src/app/env/env-dev-task.js",
+    "env-prod": "node ./src/app/env/env-prod-task.js"
   },
   "private": true,
   "dependencies": {
