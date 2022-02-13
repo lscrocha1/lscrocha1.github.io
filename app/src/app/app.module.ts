@@ -12,6 +12,8 @@ import { AppPrivacyTerms } from './app-privacy-terms/app-privacy-terms';
 import { AppTermsOfUse } from './app-terms-of-use/app-terms-of-use';
 import { AppModal } from './app-modal/app-modal';
 import { AppComponent } from './app-component/app-component';
+import { AppBlog } from './app-blog/app-blog';
+import { AppBlogHeader } from './app-blog-header/app-blog-header';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { AppComponent } from './app-component/app-component';
     AppPrivacyTerms,
     AppTermsOfUse,
     AppModal,
-    AppComponent
+    AppComponent,
+    AppBlog,
+    AppBlogHeader
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,5 @@
+import translationService from "./translation-service";
+
 export function scrollTo(elementId: string) {
     let element = document.getElementById(elementId);
 
@@ -14,4 +16,14 @@ export function scrollTo(elementId: string) {
 
 export function isMobile() {
     return window.innerWidth <= 768;
+}
+
+export function formatDate(date: string) {
+    return new Intl
+        .DateTimeFormat(translationService.getCurrentSelectedLanguage(), {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        })
+        .format(new Date(date));
 }

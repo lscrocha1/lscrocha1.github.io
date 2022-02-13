@@ -9,3 +9,11 @@ export interface Job {
     companyLink: string;
     description: string;
 }
+
+export interface ListPostDto {
+    postId: number;
+    title: string;
+    description: string;
+    imageDisplay: string;
+    createdAt: string;
+}

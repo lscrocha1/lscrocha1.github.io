@@ -11,7 +11,12 @@ class TranslationService {
     private languageKey: string = "lscrocha1-token-language";
 
     public getCurrentSelectedLanguage() {
-        return localStorage.getItem(this.languageKey);
+        let result = localStorage.getItem(this.languageKey);
+
+        if (!result)
+            return "";
+
+        return result;
     }
 
     async setLanguage(language: string) {

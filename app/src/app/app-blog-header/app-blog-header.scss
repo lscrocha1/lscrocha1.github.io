@@ -1,0 +1,55 @@
+.blog-page {
+    background-color: #111317;
+    color: white;
+    padding: 16px;
+    font-family: "Merriweather", serif;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+}
+
+.navbar-logo {
+    margin-bottom: 16px;
+}
+
+.navbar-logo-link {
+    font-weight: 600;
+    font-size: 36px;
+}
+
+.navbar-logo-link:hover {
+    font-weight: 900;
+}
+
+.navbar {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.active-link {
+    border-bottom: 1px solid #cecece;
+}
+
+.navbar-links {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+}
+
+.link-background {
+    margin-right: 24px;
+}
+
+.link-background:last-child{
+    margin-right: 0;
+}
+
+.link:hover {
+    color: #cfcfcf;
+}

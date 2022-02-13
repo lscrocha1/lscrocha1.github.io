@@ -1,3 +1,30 @@
-<div>
-    oi
+<app-blog-header></app-blog-header>
+<div class="post-body" *ngFor="let post of posts">
+    <div>
+        <a class="link post-title" routerLink="/blog/{{post.postId}}">{{post.title}}</a>
+    </div>
+    <div class="post-created-at">
+        {{formatDate(post.createdAt)}}
+    </div>
+    <div>
+        {{post.description}}
+    </div>
+    <div class="post-image-background">
+        <img class="post-image" alt="Image display" src="{{post.imageDisplay}}" />
+    </div>
+    <div>
+        <a class="link post-read-more" routerLink="/blog/{{post.postId}}">Ler mais</a>
+    </div>
 </div>
+<div class="pagination-block">
+    <button class="button-pagination" *ngIf="currentPage > 1" (click)="changePage(-1)">
+        <span class="iconify" data-icon="mdi:chevron-left"></span>
+    </button>
+    <div *ngIf="currentPage > 1" class="current-page">
+        {{currentPage}}
+    </div>
+    <button class="button-pagination" *ngIf="hasNextPage" (click)="changePage(+1)">
+        <span class="iconify" data-icon="mdi:chevron-right"></span>
+    </button>
+</div>
+<app-footer></app-footer>
