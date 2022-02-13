@@ -12,6 +12,9 @@
         <img class="profile-picture" alt="Profile picture" src="/assets/images/profile-picture.jpeg" />
     </div>
     <div class="profile-div">
+        <a class="page-link" routerLink="/blog">blog</a>
+    </div>
+    <div class="profile-div">
         <a class="page-link" [attr.href]="!isMobile ? ('#portfolio') : ('#')"
             (click)="linkClick('portfolio')">{{t('portfolio')}}</a>
     </div>

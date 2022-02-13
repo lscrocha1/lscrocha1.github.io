@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppHome } from './app-home/app-home';
 import { AppProfile } from './app-profile/app-profile';
@@ -12,6 +11,7 @@ import { AppPortfolio } from './app-portfolio/app-portfolio';
 import { AppPrivacyTerms } from './app-privacy-terms/app-privacy-terms';
 import { AppTermsOfUse } from './app-terms-of-use/app-terms-of-use';
 import { AppModal } from './app-modal/app-modal';
+import { AppComponent } from './app-component/app-component';
 
 @NgModule({
   declarations: [
@@ -24,13 +24,14 @@ import { AppModal } from './app-modal/app-modal';
     AppPortfolio,
     AppPrivacyTerms,
     AppTermsOfUse,
-    AppModal
+    AppModal,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppHome]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
