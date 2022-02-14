@@ -9,7 +9,6 @@
 
 .language-changer {
     width: 70px;
-    margin-bottom: 16px;
     padding: 8px;
     border: 1px solid white;
     display: flex;
@@ -29,7 +28,7 @@
 
 .navbar-logo-link {
     font-weight: 600;
-    font-size: 36px;
+    font-size: 36px !important;
 }
 
 .navbar-logo-link:hover {
@@ -49,6 +48,8 @@
 .navbar-links {
     max-width: 720px;
     margin: 0 auto;
+    justify-content: center;
+    align-items: center;
     display: flex;
     flex-direction: row;
 }
@@ -68,4 +69,19 @@
 
 .link:hover {
     color: #cfcfcf;
+}
+
+@media (max-width: 768px) {
+    .link {
+        font-size: 14px;
+    }
+
+    .language-changer {
+        font-size: 14px;
+        width: 50px;
+    }
+
+    .link-background {
+        margin-right: 16px;
+    }
 }

@@ -15,6 +15,7 @@ import { AppComponent } from './app-component/app-component';
 import { AppBlog } from './app-blog/app-blog';
 import { AppBlogHeader } from './app-blog-header/app-blog-header';
 import { AppBlogDetail } from './app-blog-detail/app-blog-detail';
+import { AppNotFound } from './app-not-found/app-not-found';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AppBlogDetail } from './app-blog-detail/app-blog-detail';
     AppComponent,
     AppBlog,
     AppBlogHeader,
-    AppBlogDetail
+    AppBlogDetail,
+    AppNotFound
   ],
   imports: [
     BrowserModule,
