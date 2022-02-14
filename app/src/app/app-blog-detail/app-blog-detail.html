@@ -1,18 +1,18 @@
 <app-blog-header></app-blog-header>
-<div class="post-detail">
-    <div class="post-title">
-        {{post.title}}
+<div class="post-detail skeleton-loader">
+    <div class="post-title skeleton-loader">
+        <span class="skeleton-loader">{{post.title}}</span>
     </div>
-    <div class="post-created-at">
-        {{formatDate(post.createdAt)}}
+    <div class="post-created-at skeleton-loader">
+        <span class="skeleton-loader">{{formatDate(post.createdAt)}}</span>
     </div>
-    <div class="post-description">
-        {{post.description}}
+    <div class="post-description skeleton-loader">
+        <span class="skeleton-loader">{{post.description}}</span>
     </div>
-    <div class="post-image-background">
-        <img class="post-image" alt="Image display" src="{{post.imageDisplay}}" />
+    <div class="post-image-background skeleton-loader skeleton-loader-image">
+        <img *ngIf="!!post.imageDisplay" class="post-image skeleton-loader skeleton-loader-image" alt="Image display" src="{{post.imageDisplay}}" />
     </div>
-    <div [id]="editorId" class="post-content">
+    <div [id]="editorId" class="post-content skeleton-loader skeleton-loader-image">
     </div>
 </div>
 <app-footer></app-footer>

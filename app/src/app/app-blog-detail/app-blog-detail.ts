@@ -15,7 +15,7 @@ export class AppBlogDetail extends BaseComponent {
     post: PostDto = {
         comments: [],
         content: '',
-        createdAt: '2022-01-01',
+        createdAt: '',
         description: '',
         id: 0,
         imageDisplay: '',
