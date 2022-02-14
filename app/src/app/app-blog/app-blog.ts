@@ -10,7 +10,15 @@ import { formatDate } from '../base/util';
     styleUrls: ['./app-blog.scss', '../../common.css']
 })
 export class AppBlog extends BaseComponent {
-    posts: ListPostDto[] = [];
+    posts: ListPostDto[] = [
+        {
+            createdAt: '',
+            description: '',
+            imageDisplay: '',
+            postId: 0,
+            title: ''
+        }
+    ];
 
     search: string = "";
 

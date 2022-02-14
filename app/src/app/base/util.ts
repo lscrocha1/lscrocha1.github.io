@@ -19,6 +19,9 @@ export function isMobile() {
 }
 
 export function formatDate(date: string) {
+    if (!date)
+        return date;
+
     return new Intl
         .DateTimeFormat(translationService.getCurrentSelectedLanguage(), {
             year: 'numeric',
