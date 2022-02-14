@@ -30,7 +30,7 @@ body {
     }
 }
 
-@media (min-height: 768px) {
+@media (min-width: 768px) {
     .skeleton-loader-image:empty {
         height: 300px;
     }

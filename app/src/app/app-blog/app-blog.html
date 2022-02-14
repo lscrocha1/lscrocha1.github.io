@@ -1,4 +1,12 @@
 <app-blog-header></app-blog-header>
+<div class="empty-result" *ngIf="posts.length == 0">
+    <div>
+        {{t('blogEmptyResult')}}
+    </div>
+    <div class="empty-image">
+        <img class="no-result" src="/assets/images/no-results.png" alt="No results">
+    </div>
+</div>
 <div class="post-body skeleton-loader" *ngFor="let post of posts">
     <div>
         <a class="link post-title skeleton-loader" routerLink="/blog/{{post.postId}}">{{post.title}}</a>

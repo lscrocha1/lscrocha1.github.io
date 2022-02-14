@@ -58,7 +58,7 @@ export class AppBlog extends BaseComponent {
 
         this.quantityLastFetch = posts.length;
 
-        if (this.quantityLastFetch == 0) {
+        if (this.quantityLastFetch == 0 && this.currentPage > 1) {
             this.currentPage -= 1;
 
             await this.loadPosts();

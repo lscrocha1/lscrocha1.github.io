@@ -34,6 +34,20 @@
     text-align: justify;
 }
 
+.empty-result {
+    padding: 24px;
+    text-align: center;
+}
+
+.empty-image {
+    margin-top: 48px;
+}
+
+.no-result {
+    width: 100%;
+    max-width: 200px;
+}
+
 .post-created-at {
     margin-top: 16px;
     margin-bottom: 16px;
@@ -75,4 +89,10 @@
 .post-read-more {
     text-decoration: underline;
     font-weight: 600;
+}
+
+@media (min-width: 768px) {
+    .empty-image {
+        margin-top: 128px;
+    }
 }
