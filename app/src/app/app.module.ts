@@ -16,6 +16,7 @@ import { AppBlog } from './app-blog/app-blog';
 import { AppBlogHeader } from './app-blog-header/app-blog-header';
 import { AppBlogDetail } from './app-blog-detail/app-blog-detail';
 import { AppNotFound } from './app-not-found/app-not-found';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,9 @@ import { AppNotFound } from './app-not-found/app-not-found';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

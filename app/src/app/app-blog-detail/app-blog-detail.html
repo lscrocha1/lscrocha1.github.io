@@ -17,7 +17,7 @@
     </div>
 </div>
 <div class="comment-section skeleton-loader">
-    <div class="add-comment">
+    <div class="add-comment" (click)="scrollToAddComment()">
         {{t('blogAddComment')}}
     </div>
     <div class="comments-block" *ngIf="post.comments.length > 0">
@@ -37,7 +37,7 @@
                 <div class="comment-content">
                     <span class="skeleton-loader">{{comment.content}}</span>
                 </div>
-                <div class="comment-reply">
+                <div class="comment-reply" (click)="showReplyComment(comment.id)">
                     {{t('blogReply')}}
                 </div>
                 <div class="reply-block" *ngIf="comment.replies.length > 0">
@@ -50,10 +50,13 @@
                                 <span class="skeleton-loader">&nbsp;{{formatDate(reply.createdAt)}}</span>
                             </div>
                         </div>
+                        <div class="replying-to" *ngIf="!!reply.replyingToId">
+                            <span>{{t('blogReplyingTo')}}{{replyingTo(comment.id, reply.replyingToId)}}</span>
+                        </div>
                         <div class="comment-content">
                             <span class="skeleton-loader">{{reply.content}}</span>
                         </div>
-                        <div class="comment-reply">
+                        <div class="comment-reply" (click)="showReplyToReply(comment.id, reply.id)">
                             {{t('blogReply')}}
                         </div>
                     </div>
@@ -61,5 +64,57 @@
             </div>
         </div>
     </div>
+</div>
+<div *ngIf="addingComment" class="add-comment-block-background">
+    <form [formGroup]="addCommentForm" class="add-comment-block" (ngSubmit)="addComment()" id="add-comment">
+        <div class="add-comment-block-header">
+            <span>{{t('blogAddComment')}}</span>
+        </div>
+        <div class="contact-input">
+            <div class="input-container">
+                <input name="userName" maxlength="100" formControlName="name" id="userName" class="input" type="text"
+                    required />
+                <label class="label" for="userName">{{t('blogAddCommentName')}}</label>
+            </div>
+        </div>
+        <div>
+            <div class="input-container">
+                <textarea rows="10" maxlength="1000" formControlName="content" id="content" name="content"
+                    class="textarea" required></textarea>
+                <label class="label" for="content">{{t('blogAddCommentContent')}}</label>
+            </div>
+        </div>
+        <div>
+            <div class="btn-submit">
+                <button type="submit" class="button">{{t('blogAddComentButton')}}</button>
+            </div>
+        </div>
+    </form>
+</div>
+<div *ngIf="replyingComment" class="add-comment-block-background">
+    <form [formGroup]="addCommentForm" class="add-comment-block" (ngSubmit)="replyComment()" id="add-comment">
+        <div class="add-comment-block-header">
+            <span>{{t('blogReplyComment')}}</span>
+        </div>
+        <div class="contact-input">
+            <div class="input-container">
+                <input name="userName" maxlength="100" formControlName="name" id="userName" class="input" type="text"
+                    required />
+                <label class="label" for="userName">{{t('blogAddCommentName')}}</label>
+            </div>
+        </div>
+        <div>
+            <div class="input-container">
+                <textarea rows="10" maxlength="1000" formControlName="content" id="content" name="content"
+                    class="textarea" required></textarea>
+                <label class="label" for="content">{{t('blogAddCommentContent')}}</label>
+            </div>
+        </div>
+        <div>
+            <div class="btn-submit">
+                <button type="submit" class="button">{{t('blogAddComentButton')}}</button>
+            </div>
+        </div>
+    </form>
 </div>
 <app-footer></app-footer>

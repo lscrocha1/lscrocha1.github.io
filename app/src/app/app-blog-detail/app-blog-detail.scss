@@ -40,9 +40,14 @@
 .comments-block {
     margin-top: 24px;
     margin-bottom: 48px;
-    background-color: #333333;
-    color: white;
+    border: 1px solid black;
     padding: 24px;
+}
+
+.add-comment-block-background {
+    padding: 24px;
+    max-width: 960px;
+    margin: 0 auto;
 }
 
 .comment-section-name {
@@ -76,7 +81,7 @@
 
 .add-comment {
     text-decoration: underline;
-    display: inline-block;    
+    display: inline-block;
 }
 
 .add-comment:hover {
@@ -93,8 +98,13 @@
 }
 
 .reply-block {
-    margin-top: 16px;
+    margin-top: 24px;
     padding-left: 48px;
+}
+
+.replying-to {
+    margin-bottom: 16px;
+    font-size: 12px;
 }
 
 .reply-block-comment {
@@ -104,4 +114,18 @@
 .comment-reply:hover {
     color: #8b8a8a;
     cursor: pointer;
+}
+
+.add-comment-block-header {
+    padding-bottom: 36px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.add-comment-block {
+    padding: 24px;
+    max-width: 960px;
+    margin: 0 auto;
+    margin-bottom: 48px;
+    border: 1px solid black;
 }

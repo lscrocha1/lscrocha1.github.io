@@ -78,5 +78,10 @@
     "blogMultipleComments": "comments",
     "blogAddComment": "Add comment",
     "blogReply": "reply",
-    "blogCommentsBlock": "Comments"
+    "blogCommentsBlock": "Comments",
+    "blogAddComentButton": "Send",
+    "blogAddCommentContent": "Comment",
+    "blogAddCommentName": "Name",
+    "blogReplyComment": "Reply to comment",
+    "blogReplyingTo": "Replying to "
 }

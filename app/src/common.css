@@ -5,7 +5,7 @@
 .input,
 .textarea {
     border: 0;
-    border-bottom: 2px solid #111317;
+    border-bottom: 1px solid #111317;
     outline: none;
     transition: 0.2s ease-in-out;
     box-sizing: border-box;
@@ -38,12 +38,12 @@
 /* Interation */
 .input:valid,
 .input:focus {
-    border-bottom: 2px solid #111317;
+    border-bottom: 1px solid #111317;
 }
 
 .textarea:valid,
 .textarea:focus {
-    border-bottom: 2px solid #111317;
+    border-bottom: 1px solid #111317;
 }
 
 .input:valid + label,

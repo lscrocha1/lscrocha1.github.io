@@ -1,5 +1,5 @@
 import translationService from "../base/translation-service";
-import { AddCommentDto, ListPostDto, PostDto } from "../base/types";
+import { AddCommentDto, ListPostDto, PostDto, ReplyCommentDto } from "../base/types";
 import env from "../env/env";
 
 class AppBlogService {
@@ -14,7 +14,8 @@ class AppBlogService {
 
         let response = await fetch(encodeURI(url), {
             headers: {
-                'Content-Language': translationService.getCurrentSelectedLanguage()
+                'Content-Language': translationService.getCurrentSelectedLanguage(),
+                'Content-Type': 'application/json'
             }
         });
 
@@ -29,7 +30,8 @@ class AppBlogService {
 
         let response = await fetch(encodeURI(url), {
             headers: {
-                'Content-Language': translationService.getCurrentSelectedLanguage()
+                'Content-Language': translationService.getCurrentSelectedLanguage(),
+                'Content-Type': 'application/json'
             }
         });
 
@@ -44,19 +46,21 @@ class AppBlogService {
 
         await fetch(encodeURI(url), {
             headers: {
-                'Content-Language': translationService.getCurrentSelectedLanguage()
+                'Content-Language': translationService.getCurrentSelectedLanguage(),
+                'Content-Type': 'application/json'
             },
             method: 'POST',
             body: JSON.stringify(dto)
         });
     }
 
-    async replyComment(postId: number, commentId: number, dto: AddCommentDto) {
+    async replyComment(postId: number, commentId: number, dto: ReplyCommentDto) {
         let url = `${env.apiurl}/v1/comment/post/${postId}/comment/${commentId}`;
 
         await fetch(encodeURI(url), {
             headers: {
-                'Content-Language': translationService.getCurrentSelectedLanguage()
+                'Content-Language': translationService.getCurrentSelectedLanguage(),
+                'Content-Type': 'application/json'
             },
             method: 'POST',
             body: JSON.stringify(dto)

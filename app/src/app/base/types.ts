@@ -55,9 +55,16 @@ export interface AddCommentDto {
     content: string;
 }
 
+export interface ReplyCommentDto {
+    userName: string;
+    content: string;
+    replyingToId?: number;
+}
+
 export interface ReplyDto {
     id: number;
     userName: string;
     content: string;
     createdAt: string;
+    replyingToId?: number;
 }

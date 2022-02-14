@@ -30,3 +30,19 @@ export function formatDate(date: string) {
         })
         .format(new Date(date));
 }
+
+export function formatDateWithHour(date: string) {
+    if (!date)
+        return date;
+
+    return new Intl
+        .DateTimeFormat(translationService.getCurrentSelectedLanguage(), {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: false
+        })
+        .format(new Date(date));
+}
