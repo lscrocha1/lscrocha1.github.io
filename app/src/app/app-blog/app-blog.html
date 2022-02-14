@@ -9,21 +9,29 @@
 </div>
 <div class="post-body skeleton-loader" *ngFor="let post of posts">
     <div>
-        <a class="link post-title skeleton-loader" routerLink="/blog/{{post.postId}}">{{post.title}}</a>
+        <a class="link post-title skeleton-loader" title="{{post.title}}"
+            routerLink="/blog/{{post.postId}}">{{post.title}}</a>
     </div>
     <div class="post-created-at skeleton-loader">
-        <span class="skeleton-loader">{{formatDate(post.createdAt)}}</span>
+        <span class="skeleton-loader"
+            title="{{'This post as created at ' + formatDate(post.createdAt)}}">{{formatDate(post.createdAt)}}</span>
     </div>
     <div class="post-description skeleton-loader">
-        <span class="skeleton-loader">{{post.description}}</span>
+        <span class="skeleton-loader" title="{{post.description}}">{{post.description}}</span>
     </div>
     <div class="post-image-background skeleton-loader skeleton-loader-image">
         <img *ngIf="!!post.imageDisplay" class="post-image skeleton-loader skeleton-loader-image" alt="Image display"
             src="{{post.imageDisplay}}" />
     </div>
     <div class="skeleton-loader">
-        <a *ngIf="post.postId > 0" class="link post-read-more skeleton-loader" routerLink="/blog/{{post.postId}}">Ler
-            mais</a>
+        <a *ngIf="post.postId > 0" title="{{t('blogReadMore')}}" class="link post-read-more skeleton-loader"
+            routerLink="/blog/{{post.postId}}">
+            {{t('blogReadMore')}}
+        </a>
+        <a *ngIf="post.quantityComments > 0" class="link post-read-more skeleton-loader"
+            routerLink="/blog/{{post.postId}}">
+            {{post.quantityComments}} {{getCommentText(post.quantityComments)}}
+        </a>
     </div>
 </div>
 <div class="pagination-block">

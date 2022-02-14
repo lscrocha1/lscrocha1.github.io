@@ -72,5 +72,8 @@
             "description": "Programming intern, being responsible for creating new pages and new APIs.\n\nThe tools used were Ionic 2, Angular 2 and .NET Core."
         }
     ],
-    "blogEmptyResult": "There are no posts currently, check it out later."
+    "blogEmptyResult": "There are no posts currently, check it out later.",
+    "blogReadMore": "Read more",
+    "blogSingleComment": "comment",
+    "blogMultipleComments": "comments"
 }

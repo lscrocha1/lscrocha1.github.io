@@ -16,6 +16,12 @@
             <div class="link-background">
                 <a class="link" routerLink="/">{{t('contact')}}</a>
             </div>
+            <div>
+                <div class="language-changer" (click)="changeLanguage()">
+                    <span class="iconify iconify-globe" data-icon="bi:globe"></span>
+                    {{currentLanguage == 'en' ? 'PT' : 'EN'}}
+                </div>
+            </div>
         </div>
     </div>
 </div>

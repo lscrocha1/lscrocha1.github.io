@@ -16,7 +16,8 @@ export class AppBlog extends BaseComponent {
             description: '',
             imageDisplay: '',
             postId: 0,
-            title: ''
+            title: '',
+            quantityComments: 0
         }
     ];
 
@@ -38,6 +39,13 @@ export class AppBlog extends BaseComponent {
 
     formatDate(date: string) {
         return formatDate(date);
+    }
+
+    getCommentText(quantity: number) {
+        if (quantity <= 1)
+            return this.t('blogSingleComment');
+
+        return this.t('blogMultipleComments');
     }
 
     changePage(pageToAdd: number) {

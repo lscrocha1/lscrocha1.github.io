@@ -7,6 +7,22 @@
     padding-bottom: 24px;
 }
 
+.language-changer {
+    width: 70px;
+    margin-bottom: 16px;
+    padding: 8px;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.language-changer:hover {
+    background-color: #4d4e50;
+}
+
 .navbar-logo {
     margin-bottom: 16px;
 }
@@ -46,7 +62,7 @@
     margin-right: 24px;
 }
 
-.link-background:last-child{
+.link-background:last-child {
     margin-right: 0;
 }
 

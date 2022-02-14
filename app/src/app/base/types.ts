@@ -16,6 +16,7 @@ export interface ListPostDto {
     description: string;
     imageDisplay: string;
     createdAt: string;
+    quantityComments: number;
 }
 
 export interface PostDto {
