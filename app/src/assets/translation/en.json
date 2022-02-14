@@ -75,5 +75,8 @@
     "blogEmptyResult": "There are no posts currently, check it out later.",
     "blogReadMore": "Read more",
     "blogSingleComment": "comment",
-    "blogMultipleComments": "comments"
+    "blogMultipleComments": "comments",
+    "blogAddComment": "Add comment",
+    "blogReply": "reply",
+    "blogCommentsBlock": "Comments"
 }

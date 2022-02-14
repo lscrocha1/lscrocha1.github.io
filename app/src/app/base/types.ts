@@ -47,4 +47,17 @@ export interface CommentDto {
     userName: string;
     content: string;
     createdAt: string;
+    replies: ReplyDto[];
+}
+
+export interface AddCommentDto {
+    userName: string;
+    content: string;
+}
+
+export interface ReplyDto {
+    id: number;
+    userName: string;
+    content: string;
+    createdAt: string;
 }

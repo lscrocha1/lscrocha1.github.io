@@ -75,5 +75,8 @@
     "blogEmptyResult": "Não há postagens no momento, confira mais tarde.",
     "blogReadMore": "Ler mais",
     "blogSingleComment": "comentário",
-    "blogMultipleComments": "comentários"
+    "blogMultipleComments": "comentários",
+    "blogAddComment": "Adicionar comentário",
+    "blogReply": "responder",
+    "blogCommentsBlock": "Comentários"
 }

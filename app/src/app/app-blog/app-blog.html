@@ -28,7 +28,7 @@
             routerLink="/blog/{{post.postId}}">
             {{t('blogReadMore')}}
         </a>
-        <a *ngIf="post.quantityComments > 0" class="link post-read-more skeleton-loader"
+        <a *ngIf="post.quantityComments > 0" class="link post-read-more post-comment skeleton-loader"
             routerLink="/blog/{{post.postId}}">
             {{post.quantityComments}} {{getCommentText(post.quantityComments)}}
         </a>

@@ -10,9 +10,56 @@
         <span class="skeleton-loader">{{post.description}}</span>
     </div>
     <div class="post-image-background skeleton-loader skeleton-loader-image">
-        <img *ngIf="!!post.imageDisplay" class="post-image skeleton-loader skeleton-loader-image" alt="Image display" src="{{post.imageDisplay}}" />
+        <img *ngIf="!!post.imageDisplay" class="post-image skeleton-loader skeleton-loader-image" alt="Image display"
+            src="{{post.imageDisplay}}" />
     </div>
     <div [id]="editorId" class="post-content skeleton-loader skeleton-loader-image">
+    </div>
+</div>
+<div class="comment-section skeleton-loader">
+    <div class="add-comment">
+        {{t('blogAddComment')}}
+    </div>
+    <div class="comments-block" *ngIf="post.comments.length > 0">
+        <div class="comment-section-name">
+            {{t('blogCommentsBlock')}}
+        </div>
+        <div>
+            <div class="comment-block skeleton-loader skeleton-loader-image" *ngFor="let comment of post.comments">
+                <div class="comment-user-date">
+                    <div>
+                        <span class="skeleton-loader">{{comment.userName}}&nbsp;-</span>
+                    </div>
+                    <div class="comment-created-at">
+                        <span class="skeleton-loader">&nbsp;{{formatDate(comment.createdAt)}}</span>
+                    </div>
+                </div>
+                <div class="comment-content">
+                    <span class="skeleton-loader">{{comment.content}}</span>
+                </div>
+                <div class="comment-reply">
+                    {{t('blogReply')}}
+                </div>
+                <div class="reply-block" *ngIf="comment.replies.length > 0">
+                    <div class="reply-block-comment" *ngFor="let reply of comment.replies">
+                        <div class="comment-user-date">
+                            <div>
+                                <span class="skeleton-loader">{{reply.userName}}&nbsp;-</span>
+                            </div>
+                            <div class="comment-created-at">
+                                <span class="skeleton-loader">&nbsp;{{formatDate(reply.createdAt)}}</span>
+                            </div>
+                        </div>
+                        <div class="comment-content">
+                            <span class="skeleton-loader">{{reply.content}}</span>
+                        </div>
+                        <div class="comment-reply">
+                            {{t('blogReply')}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <app-footer></app-footer>
