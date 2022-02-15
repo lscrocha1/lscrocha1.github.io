@@ -46,3 +46,12 @@ export function formatDateWithHour(date: string) {
         })
         .format(new Date(date));
 }
+
+export function goTo(link: string) {
+    let isFromGithub = location.href.indexOf('github') > 0;
+
+    if (isFromGithub)
+        location.href = `#${link}`;
+    else
+        location.href = link;
+}

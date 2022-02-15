@@ -33,6 +33,12 @@
             {{post.quantityComments}} {{getCommentText(post.quantityComments)}}
         </a>
     </div>
+    <div class="tags">
+        <div class="post-tag" (click)="searchByTag(tag.id)" *ngFor="let tag of post.tags">
+            <span class="iconify iconify-tag" data-icon="mdi:tag"></span>
+            &nbsp;{{tag.name}}
+        </div>
+    </div>
 </div>
 <div class="pagination-block">
     <button class="button-pagination" *ngIf="currentPage > 1" (click)="changePage(-1)">

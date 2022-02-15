@@ -3,7 +3,7 @@ import { BaseComponent } from '../base/base-component';
 import { ActivatedRoute } from '@angular/router';
 import appBlogService from '../app-blog/app-blog-service';
 import { PostDto } from '../base/types';
-import { formatDate, formatDateWithHour, scrollTo } from '../base/util';
+import { formatDate, formatDateWithHour, goTo, scrollTo } from '../base/util';
 import EditorJS from '@editorjs/editorjs';
 import { FormBuilder } from '@angular/forms';
 
@@ -58,6 +58,10 @@ export class AppBlogDetail extends BaseComponent {
 
     ngOnInit() {
         this.loadPost();
+    }    
+
+    searchByTag(tagId: number) {
+        goTo(`/blog?tag=${tagId}`);
     }
 
     scrollToAddComment() {
@@ -102,7 +106,7 @@ export class AppBlogDetail extends BaseComponent {
             userName: this.addCommentForm.controls['name'].value,
             replyingToId: this.replyingToId
         });
-        
+
         this.replyingToId = undefined;
 
         this.selectedCommentId = 0;
@@ -124,7 +128,7 @@ export class AppBlogDetail extends BaseComponent {
         let id = this.route.snapshot.paramMap.get('id');
 
         if (!id) {
-            location.href = "/#/404";
+            goTo("/404");
 
             return;
         }

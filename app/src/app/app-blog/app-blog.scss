@@ -73,6 +73,38 @@
     border-radius: 50%;
 }
 
+.tags {
+    display: flex;
+    flex-direction: row;
+    margin-top: 24px;
+}
+
+.iconify-tag {
+    margin-right: 4px;
+}
+
+.post-tag {
+    margin-right: 16px;
+    font-size: 10px;
+    text-transform: lowercase;
+    color: white;
+    background-color: #686767;
+    padding: 8px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+.post-tag:hover {
+    background-color: #3f3f3f;
+}
+
+.post-tag:last-child {
+    margin-right: 0;
+}
+
 .post-comment {
     margin-left: 16px;
 }

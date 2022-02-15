@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { BaseComponent } from '../base/base-component';
-import { ListPostDto } from '../base/types';
+import { PostsDto } from '../base/types';
 import appBlogService from './app-blog-service';
-import { formatDate } from '../base/util';
+import { formatDate, goTo } from '../base/util';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-blog',
@@ -10,14 +11,15 @@ import { formatDate } from '../base/util';
     styleUrls: ['./app-blog.scss', '../../common.css']
 })
 export class AppBlog extends BaseComponent {
-    posts: ListPostDto[] = [
+    posts: PostsDto[] = [
         {
             createdAt: '',
             description: '',
             imageDisplay: '',
             postId: 0,
             title: '',
-            quantityComments: 0
+            quantityComments: 0,
+            tags: []
         }
     ];
 
@@ -33,8 +35,16 @@ export class AppBlog extends BaseComponent {
 
     hasNextPage: boolean = false;
 
+    constructor(private route: ActivatedRoute) {
+        super();
+    }
+
     ngOnInit() {
         this.loadPosts();
+    }
+
+    searchByTag(tagId: number) {
+        goTo(`/blog?tag=${tagId}`);
     }
 
     formatDate(date: string) {
@@ -58,6 +68,9 @@ export class AppBlog extends BaseComponent {
     }
 
     async loadPosts() {
+        if (this.route.queryParams && (this.route.queryParams as any).value && (this.route.queryParams as any).value.tag)
+            this.tag = (this.route.queryParams as any).value.tag;
+
         let posts = await appBlogService.getPosts(
             this.search,
             this.tag,

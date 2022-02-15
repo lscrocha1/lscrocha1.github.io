@@ -10,13 +10,14 @@ export interface Job {
     description: string;
 }
 
-export interface ListPostDto {
+export interface PostsDto {
     postId: number;
     title: string;
     description: string;
     imageDisplay: string;
     createdAt: string;
     quantityComments: number;
+    tags: TagDto[];
 }
 
 export interface PostDto {

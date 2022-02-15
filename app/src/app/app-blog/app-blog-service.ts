@@ -1,9 +1,10 @@
 import translationService from "../base/translation-service";
-import { AddCommentDto, ListPostDto, PostDto, ReplyCommentDto } from "../base/types";
+import { AddCommentDto, PostsDto, PostDto, ReplyCommentDto } from "../base/types";
+import { goTo } from "../base/util";
 import env from "../env/env";
 
 class AppBlogService {
-    async getPosts(search: string = "", tag: number = 0, page: number = 1, limit: number = 10): Promise<ListPostDto[]> {
+    async getPosts(search: string = "", tag: number = 0, page: number = 1, limit: number = 10): Promise<PostsDto[]> {
         let url = `${env.apiurl}/v1/post?page=${page}&limit=${limit}`;
 
         if (search)
@@ -25,7 +26,7 @@ class AppBlogService {
         return await response.json();
     }
 
-    async getPost(postId: string) : Promise<PostDto> {
+    async getPost(postId: string): Promise<PostDto> {
         let url = `${env.apiurl}/v1/post/${postId}`;
 
         let response = await fetch(encodeURI(url), {
@@ -36,7 +37,7 @@ class AppBlogService {
         });
 
         if (response.status != 200)
-            location.href = "/#/404"
+            goTo("/404");
 
         return await response.json();
     }

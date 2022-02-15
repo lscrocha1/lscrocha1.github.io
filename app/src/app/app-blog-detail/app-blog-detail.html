@@ -15,6 +15,12 @@
     </div>
     <div [id]="editorId" class="post-content skeleton-loader skeleton-loader-image">
     </div>
+    <div class="tags">
+        <div class="post-tag" (click)="searchByTag(tag.id)" *ngFor="let tag of post.tags">
+            <span class="iconify iconify-tag" data-icon="mdi:tag"></span>
+            &nbsp;{{tag.name}}
+        </div>
+    </div>
 </div>
 <div class="comment-section skeleton-loader">
     <div class="add-comment" (click)="scrollToAddComment()">
