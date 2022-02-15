@@ -58,7 +58,12 @@ export class AppBlogDetail extends BaseComponent {
 
     ngOnInit() {
         this.loadPost();
-    }    
+    }
+
+    cancelComment() {
+        this.addingComment = false;
+        this.replyingComment = false;
+    }
 
     searchByTag(tagId: number) {
         goTo(`/blog?tag=${tagId}`);

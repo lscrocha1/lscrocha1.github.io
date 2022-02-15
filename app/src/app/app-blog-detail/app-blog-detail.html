@@ -90,7 +90,10 @@
                 <label class="label" for="content">{{t('blogAddCommentContent')}}</label>
             </div>
         </div>
-        <div>
+        <div class="btns-comment">
+            <div class="btn-submit">
+                <button type="button" (click)="cancelComment()" class="button btn-cancel">{{t('blogCancel')}}</button>
+            </div>
             <div class="btn-submit">
                 <button type="submit" class="button">{{t('blogAddComentButton')}}</button>
             </div>
@@ -116,7 +119,10 @@
                 <label class="label" for="content">{{t('blogAddCommentContent')}}</label>
             </div>
         </div>
-        <div>
+        <div class="btns-comment">
+            <div class="btn-submit">
+                <button type="button" (click)="cancelComment()" class="button btn-cancel">{{t('blogCancel')}}</button>
+            </div>
             <div class="btn-submit">
                 <button type="submit" class="button">{{t('blogAddComentButton')}}</button>
             </div>

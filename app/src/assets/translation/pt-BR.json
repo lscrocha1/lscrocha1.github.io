@@ -83,5 +83,6 @@
     "blogAddCommentContent": "Comentário",
     "blogAddCommentName": "Nome",
     "blogReplyComment": "Responder ao comentário",
-    "blogReplyingTo": "Respondendo à "
+    "blogReplyingTo": "Respondendo à ",
+    "blogCancel": "Cancel"
 }
