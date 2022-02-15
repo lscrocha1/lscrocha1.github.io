@@ -28,10 +28,9 @@
             routerLink="/blog/{{post.postId}}">
             {{t('blogReadMore')}}
         </a>
-        <a *ngIf="post.quantityComments > 0" class="link post-read-more post-comment skeleton-loader"
-            routerLink="/blog/{{post.postId}}">
+        <span *ngIf="post.quantityComments > 0" class="post-comment skeleton-loader">
             {{post.quantityComments}} {{getCommentText(post.quantityComments)}}
-        </a>
+        </span>
     </div>
     <div class="tags">
         <div class="post-tag" (click)="searchByTag(tag.id)" *ngFor="let tag of post.tags">
