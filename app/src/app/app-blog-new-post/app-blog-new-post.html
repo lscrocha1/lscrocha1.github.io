@@ -1,0 +1,17 @@
+<div class="new-page-form">
+    <form [formGroup]="formNewPost">
+        <div class="input-container">
+            <input name="ptTitle" maxlength="255" formControlName="ptTitle" id="ptTitle" class="input" />
+            <label class="label" for="ptTitle">PT Title</label>
+        </div>
+        <div class="input-container">
+            <input name="ptDescription" maxlength="500" formControlName="ptDescription" id="ptDescription"
+                class="input" />
+            <label class="label" for="ptDescription">PT Description</label>
+        </div>
+        <div class="input-container">
+            <label>PT Content</label>
+            <div [id]="editorPtId"></div>
+        </div>
+    </form>
+</div>
