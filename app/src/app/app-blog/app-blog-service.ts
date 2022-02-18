@@ -1,10 +1,10 @@
 import translationService from "../base/translation-service";
-import { AddCommentDto, PostsDto, PostDto, ReplyCommentDto } from "../base/types";
+import { AddCommentDto, PostDto, ReplyCommentDto, Post } from "../base/types";
 import { goTo } from "../base/util";
 import env from "../env/env";
 
 class AppBlogService {
-    async getPosts(search: string = "", tag: number = 0, page: number = 1, limit: number = 10): Promise<PostsDto[]> {
+    async getPosts(search: string = "", tag: number = 0, page: number = 1, limit: number = 10): Promise<Post[]> {
         let url = `${env.apiurl}/v1/post?page=${page}&limit=${limit}`;
 
         if (search)
@@ -42,7 +42,7 @@ class AppBlogService {
         return await response.json();
     }
 
-    async addComment(postId: number, dto: AddCommentDto) {
+    async addComment(postId: string, dto: AddCommentDto) {
         let url = `${env.apiurl}/v1/comment/${postId}`;
 
         await fetch(encodeURI(url), {
@@ -55,7 +55,7 @@ class AppBlogService {
         });
     }
 
-    async replyComment(postId: number, commentId: number, dto: ReplyCommentDto) {
+    async replyComment(postId: string, commentId: string, dto: ReplyCommentDto) {
         let url = `${env.apiurl}/v1/comment/post/${postId}/comment/${commentId}`;
 
         await fetch(encodeURI(url), {

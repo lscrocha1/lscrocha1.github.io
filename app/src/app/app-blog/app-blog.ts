@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { BaseComponent } from '../base/base-component';
-import { PostsDto } from '../base/types';
+import { Post, PostDisplayTypeEnum, Content, PostContentLanguageEnum } from '../base/types';
 import appBlogService from './app-blog-service';
 import { formatDate, goTo } from '../base/util';
 import { ActivatedRoute } from '@angular/router';
+import translationService from '../base/translation-service';
+import { DataService } from '../base/data-service';
 
 @Component({
     selector: 'app-blog',
@@ -11,17 +13,30 @@ import { ActivatedRoute } from '@angular/router';
     styleUrls: ['./app-blog.scss', '../../common.css']
 })
 export class AppBlog extends BaseComponent {
-    posts: PostsDto[] = [
+    posts: Post[] = [
         {
+            comments: [],
+            contents: [],
             createdAt: '',
-            description: '',
-            imageDisplay: '',
-            postId: 0,
-            title: '',
-            quantityComments: 0,
-            tags: []
+            display: '',
+            displayType: PostDisplayTypeEnum.Image,
+            id: '',
+            images: [],
+            tags: [],
+            updatedAt: ''
         }
     ];
+
+    postContents: Content[] = [
+        {
+            postId: '',
+            body: '',
+            description: '',
+            id: '',
+            language: PostContentLanguageEnum.English,
+            title: ''
+        }
+    ]
 
     search: string = "";
 
@@ -35,7 +50,7 @@ export class AppBlog extends BaseComponent {
 
     hasNextPage: boolean = false;
 
-    constructor(private route: ActivatedRoute) {
+    constructor(private route: ActivatedRoute, private dataService: DataService) {
         super();
     }
 
@@ -43,8 +58,26 @@ export class AppBlog extends BaseComponent {
         this.loadPosts();
     }
 
-    searchByTag(tagId: number) {
-        goTo(`/blog?tag=${tagId}`);
+    getFormatedTitle(post: Post) {
+        let title = this.postContents.find(e => e.postId == post.id)?.title;
+
+        return title?.toLowerCase().replace(' ', '-').trim();
+    }
+
+    getTitle(post: Post) {
+        return this.postContents.find(e => e.postId == post.id)?.title;
+    }
+
+    setPost(post: Post) {
+        this.dataService.post = post;
+    }
+
+    getDescription(post: Post) {
+        return this.postContents.find(e => e.postId == post.id)?.description;
+    }
+
+    searchByTag(tag: string) {
+        goTo(`/blog/tags/${tag}`);
     }
 
     formatDate(date: string) {
@@ -92,5 +125,22 @@ export class AppBlog extends BaseComponent {
         this.hasNextPage = this.limit == this.quantityLastFetch;
 
         this.posts = posts;
+
+        let currentLanguage = translationService.getCurrentSelectedLanguage();
+
+        this.postContents = [];
+
+        for (let post of posts) {
+            let content = post.contents.find(e => e.language == (currentLanguage == "en" ? PostContentLanguageEnum.English : PostContentLanguageEnum.Portuguese))!;
+
+            this.postContents.push({
+                body: content.body,
+                description: content.description,
+                id: content.id,
+                language: content.language,
+                postId: post.id,
+                title: content.title
+            });
+        }
     }
 }

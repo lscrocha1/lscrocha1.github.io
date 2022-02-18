@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { BaseComponent } from '../base/base-component';
 import { ActivatedRoute } from '@angular/router';
 import appBlogService from '../app-blog/app-blog-service';
-import { PostDto } from '../base/types';
+import { Post, PostDisplayTypeEnum } from '../base/types';
 import { formatDate, formatDateWithHour, goTo, scrollTo } from '../base/util';
 import EditorJS from '@editorjs/editorjs';
 import { FormBuilder } from '@angular/forms';
+import { DataService } from '../base/data-service';
 
 @Component({
     selector: 'app-blog-detail',
@@ -16,7 +17,8 @@ export class AppBlogDetail extends BaseComponent {
 
     constructor(
         private formBuilder: FormBuilder,
-        private route: ActivatedRoute) {
+        private route: ActivatedRoute,
+        private dataService: DataService) {
         super();
     }
 
@@ -25,18 +27,17 @@ export class AppBlogDetail extends BaseComponent {
         content: ''
     });
 
-    post: PostDto = {
+    post: Post = {
         comments: [],
-        content: '',
+        contents: [],
         createdAt: '',
-        description: '',
-        id: 0,
-        imageDisplay: '',
+        display: '',
+        displayType: PostDisplayTypeEnum.Image,
+        id: '',
         images: [],
         tags: [],
-        title: '',
         updatedAt: ''
-    };
+    }
 
     editorId: string = 'div-content-id';
 
@@ -44,9 +45,9 @@ export class AppBlogDetail extends BaseComponent {
 
     replyingComment: boolean = false;
 
-    selectedCommentId: number = 0;
+    selectedCommentId: string = '';
 
-    replyingToId?: number = undefined;
+    replyingToId?: string = undefined;
 
     formatDate(date: string) {
         return formatDate(date);
@@ -75,7 +76,7 @@ export class AppBlogDetail extends BaseComponent {
         setTimeout(() => scrollTo('add-comment'), 200);
     }
 
-    showReplyComment(commentId: number) {
+    showReplyComment(commentId: string) {
         this.selectedCommentId = commentId;
 
         this.addingComment = false;
@@ -84,7 +85,7 @@ export class AppBlogDetail extends BaseComponent {
         setTimeout(() => scrollTo('add-comment'), 200);
     }
 
-    showReplyToReply(commentId: number, replyId: number) {
+    showReplyToReply(commentId: string, replyId: string) {
         this.replyingToId = replyId;
         this.selectedCommentId = commentId;
 
@@ -94,7 +95,7 @@ export class AppBlogDetail extends BaseComponent {
         setTimeout(() => scrollTo('add-comment'), 200);
     }
 
-    replyingTo(commentId: number, replyId?: number) {
+    replyingTo(commentId: string, replyId?: string) {
         if (!replyId)
             return null;
 
@@ -114,7 +115,7 @@ export class AppBlogDetail extends BaseComponent {
 
         this.replyingToId = undefined;
 
-        this.selectedCommentId = 0;
+        this.selectedCommentId = '';
 
         this.addCommentForm.reset();
 
@@ -130,17 +131,17 @@ export class AppBlogDetail extends BaseComponent {
     }
 
     async loadPost() {
-        let id = this.route.snapshot.paramMap.get('id');
+        // let id = this.route.snapshot.paramMap.get('id');
 
-        if (!id) {
-            goTo("/404");
+        // if (!id) {
+        //     goTo("/404");
 
-            return;
-        }
+        //     return;
+        // }
 
-        this.post = await appBlogService.getPost(id);
+        // this.post = await appBlogService.getPost(id);
 
-        this.loadContent();
+        // this.loadContent();
     }
 
     async addComment() {

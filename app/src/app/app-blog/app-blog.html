@@ -9,34 +9,34 @@
 </div>
 <div class="post-body skeleton-loader" *ngFor="let post of posts">
     <div>
-        <a class="link post-title skeleton-loader" title="{{post.title}}"
-            routerLink="/blog/{{post.postId}}">{{post.title}}</a>
+        <a class="link post-title skeleton-loader" title="{{getTitle(post)}}" (click)="setPost(post)"
+            routerLink="/blog/{{getFormatedTitle(post)}}">{{getTitle(post)}}</a>
     </div>
     <div class="post-created-at skeleton-loader">
         <span class="skeleton-loader"
             title="{{'This post as created at ' + formatDate(post.createdAt)}}">{{formatDate(post.createdAt)}}</span>
     </div>
     <div class="post-description skeleton-loader">
-        <span class="skeleton-loader" title="{{post.description}}">{{post.description}}</span>
+        <span class="skeleton-loader" title="{{getDescription(post)}}">{{getDescription(post)}}</span>
     </div>
     <div class="post-image-background skeleton-loader skeleton-loader-image">
-        <img *ngIf="!!post.imageDisplay" class="post-image skeleton-loader skeleton-loader-image" alt="Image display"
-            src="{{post.imageDisplay}}" />
+        <img *ngIf="!!post.display" class="post-image skeleton-loader skeleton-loader-image" alt="Image display"
+            src="{{post.display}}" />
     </div>
     <div class="skeleton-loader">
-        <a *ngIf="post.postId > 0" title="{{t('blogReadMore')}}" class="link post-read-more skeleton-loader"
-            routerLink="/blog/{{post.postId}}">
+        <a *ngIf="post.id != ''" title="{{t('blogReadMore')}}" class="link post-read-more skeleton-loader"
+            routerLink="/blog/{{getFormatedTitle(post)}}" (click)="setPost(post)">
             {{t('blogReadMore')}}
         </a>
-        <span *ngIf="post.quantityComments > 0" class="post-comment skeleton-loader">
-            {{post.quantityComments}} {{getCommentText(post.quantityComments)}}
+        <span *ngIf="post.comments.length" class="post-comment skeleton-loader">
+            {{post.comments.length}} {{getCommentText(post.comments.length)}}
         </span>
     </div>
     <div class="tags">
-        <div class="post-tag" (click)="searchByTag(tag.id)" *ngFor="let tag of post.tags">
+        <a class="post-tag" routerLink="/blog/tags/{{tag.name}}" *ngFor="let tag of post.tags">
             <span class="iconify iconify-tag" data-icon="mdi:tag"></span>
             &nbsp;{{tag.name}}
-        </div>
+        </a>
     </div>
 </div>
 <div class="pagination-block">

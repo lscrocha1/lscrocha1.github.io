@@ -18,6 +18,7 @@ import { AppBlogDetail } from './app-blog-detail/app-blog-detail';
 import { AppNotFound } from './app-not-found/app-not-found';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppBlogNewPost } from './app-blog-new-post/app-blog-new-post';
+import { DataService } from './base/data-service';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { AppBlogNewPost } from './app-blog-new-post/app-blog-new-post';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
