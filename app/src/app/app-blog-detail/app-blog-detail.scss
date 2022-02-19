@@ -137,6 +137,18 @@
     justify-content: center;
 }
 
+.comment-submited-background {
+    padding: 24px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.comment-submited {
+    padding: 24px;
+    border: 1px solid #4dcc97;
+    background-color: #67d8a9;
+}
+
 .btn-cancel {
     background-color: white !important;
     color: black !important;

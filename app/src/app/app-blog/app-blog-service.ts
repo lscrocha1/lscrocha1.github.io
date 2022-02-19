@@ -1,5 +1,5 @@
 import translationService from "../base/translation-service";
-import { AddCommentDto, PostDto, ReplyCommentDto, Post } from "../base/types";
+import { AddCommentDto, ReplyCommentDto, Post } from "../base/types";
 import { goTo } from "../base/util";
 import env from "../env/env";
 
@@ -26,7 +26,7 @@ class AppBlogService {
         return await response.json();
     }
 
-    async getPost(postId: string): Promise<PostDto> {
+    async getPost(postId: string): Promise<Post> {
         let url = `${env.apiurl}/v1/post/${postId}`;
 
         let response = await fetch(encodeURI(url), {

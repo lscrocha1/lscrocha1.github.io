@@ -84,5 +84,6 @@
     "blogAddCommentName": "Nome",
     "blogReplyComment": "Responder ao comentário",
     "blogReplyingTo": "Respondendo à ",
-    "blogCancel": "Cancel"
+    "blogCancel": "Cancel",
+    "blogCommentAdded": "Seu comentário foi colocado na fila para revisão pelos administradores do site e será publicado após a aprovação."
 }

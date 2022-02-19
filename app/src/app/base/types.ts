@@ -10,47 +10,6 @@ export interface Job {
     description: string;
 }
 
-export interface PostsDto {
-    postId: number;
-    title: string;
-    description: string;
-    imageDisplay: string;
-    createdAt: string;
-    quantityComments: number;
-    tags: TagDto[];
-}
-
-export interface PostDto {
-    id: number;
-    title: string;
-    description: string;
-    imageDisplay: string;
-    content: string;
-    createdAt: string;
-    updatedAt: string | null;
-    tags: TagDto[];
-    images: ImageDto[];
-    comments: CommentDto[];
-}
-
-export interface TagDto {
-    id: number;
-    name: string;
-}
-
-export interface ImageDto {
-    id: number;
-    link: string;
-}
-
-export interface CommentDto {
-    id: number;
-    userName: string;
-    content: string;
-    createdAt: string;
-    replies: ReplyDto[];
-}
-
 export interface AddCommentDto {
     userName: string;
     content: string;
@@ -128,4 +87,28 @@ export enum PostContentLanguageEnum {
 export enum PostDisplayTypeEnum {
     Youtube = 1,
     Image = 2
+}
+
+export interface CreatePostDto {
+    displayType: PostDisplayTypeEnum;
+    display: string;
+    contents: ContentDto[];
+    images: ImageDto[];
+    tags: TagDto[];
+}
+
+export interface ContentDto {
+    title: string;
+    body: string;
+    description: string;
+    language: PostContentLanguageEnum;
+}
+
+export interface ImageDto {
+    link: string;
+    type: PostDisplayTypeEnum;
+}
+
+export interface TagDto {
+    name: string;
 }

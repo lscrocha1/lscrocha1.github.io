@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { BaseComponent } from '../base/base-component';
 import { ActivatedRoute } from '@angular/router';
 import appBlogService from '../app-blog/app-blog-service';
-import { Post, PostDisplayTypeEnum } from '../base/types';
+import { Content, Post, PostContentLanguageEnum, PostDisplayTypeEnum } from '../base/types';
 import { formatDate, formatDateWithHour, goTo, scrollTo } from '../base/util';
 import EditorJS from '@editorjs/editorjs';
 import { FormBuilder } from '@angular/forms';
 import { DataService } from '../base/data-service';
+import translationService from '../base/translation-service';
 
 @Component({
     selector: 'app-blog-detail',
@@ -49,6 +50,8 @@ export class AppBlogDetail extends BaseComponent {
 
     replyingToId?: string = undefined;
 
+    commentSubmited: boolean = false;
+
     formatDate(date: string) {
         return formatDate(date);
     }
@@ -61,17 +64,59 @@ export class AppBlogDetail extends BaseComponent {
         this.loadPost();
     }
 
+    getTitle() {
+        let postContent = this.getPostContent();
+
+        if (!postContent)
+            return '';
+
+        return postContent?.title;
+    }
+
+    getDescription() {
+        let postContent = this.getPostContent();
+
+        if (!postContent)
+            return '';
+
+        return postContent.description;
+    }
+
+    getBody() {
+        let postContent = this.getPostContent();
+
+        if (!postContent)
+            return '';
+
+        return postContent.body;
+    }
+
+    getPostContent(): Content {
+        let currentLanguage = translationService.getCurrentSelectedLanguage();
+
+        return this
+            .post
+            .contents
+            .find(e => e.language ==
+                (currentLanguage == "en"
+                    ? PostContentLanguageEnum.English
+                    : PostContentLanguageEnum.Portuguese))!;
+    }
+
     cancelComment() {
         this.addingComment = false;
         this.replyingComment = false;
+        this.commentSubmited = false;
     }
 
-    searchByTag(tagId: number) {
-        goTo(`/blog?tag=${tagId}`);
+    searchByTag(tagId: string) {
+        goTo(`/blog/tags/${tagId}`);
     }
 
     scrollToAddComment() {
         this.addingComment = true;
+
+        this.commentSubmited = false;
 
         setTimeout(() => scrollTo('add-comment'), 200);
     }
@@ -82,12 +127,16 @@ export class AppBlogDetail extends BaseComponent {
         this.addingComment = false;
         this.replyingComment = true;
 
+        this.commentSubmited = false;
+
         setTimeout(() => scrollTo('add-comment'), 200);
     }
 
     showReplyToReply(commentId: string, replyId: string) {
         this.replyingToId = replyId;
         this.selectedCommentId = commentId;
+
+        this.commentSubmited = false;
 
         this.addingComment = false;
         this.replyingComment = true;
@@ -119,7 +168,9 @@ export class AppBlogDetail extends BaseComponent {
 
         this.addCommentForm.reset();
 
-        await this.loadPost();
+        this.commentSubmited = true;
+
+        scrollTo('comment-submited');
     }
 
     loadContent() {
@@ -131,17 +182,7 @@ export class AppBlogDetail extends BaseComponent {
     }
 
     async loadPost() {
-        // let id = this.route.snapshot.paramMap.get('id');
-
-        // if (!id) {
-        //     goTo("/404");
-
-        //     return;
-        // }
-
-        // this.post = await appBlogService.getPost(id);
-
-        // this.loadContent();
+        this.post = this.dataService.getPost();
     }
 
     async addComment() {
@@ -154,6 +195,8 @@ export class AppBlogDetail extends BaseComponent {
 
         this.addCommentForm.reset();
 
-        await this.loadPost();
+        this.commentSubmited = true;
+
+        scrollTo('comment-submited');
     }
 }

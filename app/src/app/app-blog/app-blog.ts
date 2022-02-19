@@ -68,12 +68,12 @@ export class AppBlog extends BaseComponent {
         return this.postContents.find(e => e.postId == post.id)?.title;
     }
 
-    setPost(post: Post) {
-        this.dataService.post = post;
-    }
-
     getDescription(post: Post) {
         return this.postContents.find(e => e.postId == post.id)?.description;
+    }
+
+    setPost(post: Post) {
+        this.dataService.setPost(post);
     }
 
     searchByTag(tag: string) {
