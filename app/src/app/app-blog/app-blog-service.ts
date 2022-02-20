@@ -1,5 +1,5 @@
 import translationService from "../base/translation-service";
-import { AddCommentDto, ReplyCommentDto, Post } from "../base/types";
+import { AddCommentDto, ReplyCommentDto, Post, CreatePostDto } from "../base/types";
 import { goTo } from "../base/util";
 import env from "../env/env";
 
@@ -65,6 +65,18 @@ class AppBlogService {
             },
             method: 'POST',
             body: JSON.stringify(dto)
+        });
+    }
+
+    async createPost(dto: any) {
+        let url = `${env.apiurl}/v1/post`;
+
+        await fetch(encodeURI(url), {
+            headers: {
+                'Content-Language': translationService.getCurrentSelectedLanguage()
+            },
+            method: 'POST',
+            body: dto
         });
     }
 }

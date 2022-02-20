@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { BaseComponent } from '../base/base-component';
-import { ActivatedRoute } from '@angular/router';
 import appBlogService from '../app-blog/app-blog-service';
 import { Content, Post, PostContentLanguageEnum, PostDisplayTypeEnum } from '../base/types';
 import { formatDate, formatDateWithHour, goTo, scrollTo } from '../base/util';
@@ -8,6 +7,15 @@ import EditorJS from '@editorjs/editorjs';
 import { FormBuilder } from '@angular/forms';
 import { DataService } from '../base/data-service';
 import translationService from '../base/translation-service';
+import Header from '@editorjs/header';
+// @ts-ignore
+import List from '@editorjs/list';
+// @ts-ignore
+import Checklist from '@editorjs/checklist';
+// @ts-ignore
+import Quote from '@editorjs/quote';
+import env from '../env/env';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-blog-detail',
@@ -18,8 +26,8 @@ export class AppBlogDetail extends BaseComponent {
 
     constructor(
         private formBuilder: FormBuilder,
-        private route: ActivatedRoute,
-        private dataService: DataService) {
+        private dataService: DataService,
+        private sanitizer: DomSanitizer) {
         super();
     }
 
@@ -62,6 +70,14 @@ export class AppBlogDetail extends BaseComponent {
 
     ngOnInit() {
         this.loadPost();
+    }
+
+    getSrc(image: string) {
+        return `${env.imageUrl}${image}`;
+    }
+
+    getYoutubeLink() {
+        return this.sanitizer.bypassSecurityTrustResourceUrl(this.post.display);
     }
 
     getTitle() {
@@ -177,12 +193,33 @@ export class AppBlogDetail extends BaseComponent {
         let _ = new EditorJS({
             holder: this.editorId,
             readOnly: true,
-            //data: {}
+            minHeight: 0,
+            tools: {
+                header: {
+                    class: Header as any,
+                    inlineToolbar: true
+                },
+                quote: {
+                    class: Quote,
+                    inlineToolbar: true
+                },
+                list: {
+                    class: List,
+                    inlineToolbar: true
+                },
+                checklist: {
+                    class: Checklist,
+                    inlineToolbar: true
+                }
+            },
+            data: JSON.parse(this.getBody())
         });
     }
 
     async loadPost() {
         this.post = this.dataService.getPost();
+
+        this.loadContent();
     }
 
     async addComment() {

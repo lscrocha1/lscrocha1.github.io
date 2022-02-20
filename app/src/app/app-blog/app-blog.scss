@@ -98,6 +98,15 @@
     text-decoration: none;
 }
 
+.iframe-youtube {
+    width: 100%;
+    height: 100%;
+}
+
+.video-background {
+    height: 360px;
+}
+
 .post-tag:hover {
     background-color: #3f3f3f;
 }
@@ -116,7 +125,8 @@
 
 .post-image {
     width: 100%;
-    height: unset;
+    object-fit: cover;
+    max-height: 360px;
 }
 
 .post-image-background {

@@ -1,6 +1,6 @@
 <app-blog-header></app-blog-header>
 <div class="new-page-form">
-    <form [formGroup]="formNewPost">
+    <form [formGroup]="formNewPost" (ngSubmit)="save()">
         <div class="new-post-input">
             <div class="input-container">
                 <input name="ptTitle" maxlength="100" formControlName="ptTitle" id="ptTitle" class="input" type="text"
@@ -36,6 +36,42 @@
         <div class="input-container">
             <label>EN Content</label>
             <div [id]="editorEnId"></div>
+        </div>
+        <div class="new-post-input">
+            <div class="input-container">
+                <select class="input" (change)="displayTypeChange()" formControlName="displayType" id="displayType"
+                    name="displayType">
+                    <option value="1">Youtube</option>
+                    <option value="2">Image</option>
+                </select>
+                <label class="label" for="displayType">Display Type</label>
+            </div>
+        </div>
+        <div *ngIf="displayType == 1">
+            <div class="new-post-input">
+                <div class="input-container">
+                    <input name="display" maxlength="100" formControlName="display" id="display" class="input"
+                        type="text" required />
+                    <label class="label" for="display">Link</label>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="displayType == 2">
+            <div class="new-post-input">
+                <div class="input-container">
+                    <input type="file" id="display" name="display" required (change)="fileChange()" />
+                </div>
+            </div>
+        </div>
+        <div class="new-post-input">
+            <div class="input-container">
+                <input name="tags" maxlength="100" formControlName="tags" id="tags" class="input" type="text"
+                    required />
+                <label class="label" for="tags">Tags (separated by ;)</label>
+            </div>
+        </div>
+        <div>
+            <button>Save</button>
         </div>
     </form>
 </div>

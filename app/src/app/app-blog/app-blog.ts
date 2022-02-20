@@ -6,6 +6,8 @@ import { formatDate, goTo } from '../base/util';
 import { ActivatedRoute } from '@angular/router';
 import translationService from '../base/translation-service';
 import { DataService } from '../base/data-service';
+import env from '../env/env';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-blog',
@@ -50,7 +52,10 @@ export class AppBlog extends BaseComponent {
 
     hasNextPage: boolean = false;
 
-    constructor(private route: ActivatedRoute, private dataService: DataService) {
+    constructor(
+        private route: ActivatedRoute,
+        private dataService: DataService,
+        private sanitizer: DomSanitizer) {
         super();
     }
 
@@ -61,7 +66,28 @@ export class AppBlog extends BaseComponent {
     getFormatedTitle(post: Post) {
         let title = this.postContents.find(e => e.postId == post.id)?.title;
 
-        return title?.toLowerCase().replace(' ', '-').trim();
+        let dict = {
+            "á": "a",
+            "ã": "a",
+            "ç": "c",
+            "é": "e",
+            "à": "a"
+        } as any
+
+        let result = title!
+            .toLowerCase()
+            .replace('!', '')
+            .replace('?', '')
+            .replace('(', '')
+            .replace(')', ' ')
+            .replace(/[^\w ]/g, char => dict[char] || char)
+            .split(' ')
+            .join('-');
+
+        if (result[result.length - 1] == '-')
+            result = result.substring(0, result.length - 1);
+
+        return result;
     }
 
     getTitle(post: Post) {
@@ -98,6 +124,14 @@ export class AppBlog extends BaseComponent {
             this.currentPage = 1;
 
         this.loadPosts();
+    }
+
+    getYoutubeLink(post: Post) {
+        return this.sanitizer.bypassSecurityTrustResourceUrl(post.display);
+    }
+
+    getSrc(image: string) {
+        return `${env.imageUrl}${image}`;
     }
 
     async loadPosts() {
