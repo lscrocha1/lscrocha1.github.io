@@ -5,18 +5,33 @@ import { AppHome } from './app-home/app-home';
 import { AppBlogDetail } from './app-blog-detail/app-blog-detail';
 import { AppNotFound } from './app-not-found/app-not-found';
 import { AppBlogNewPost } from './app-blog-new-post/app-blog-new-post';
+import authService from './base/auth-service';
 
-const routes: Routes = [
-  { path: '', component: AppHome },
-  { path: 'blog', component: AppBlog },
-  { path: 'blog/:id', component: AppBlogDetail },
-  { path: 'new-post', component: AppBlogNewPost },
-  { path: '404', component: AppNotFound },
-  { path: '**', redirectTo: '/404' }
-];
+const routes: Routes = getRoutes();
+
+function getRoutes() {
+	let userHasToken = authService.getToken();
+
+	let result: Routes = [
+		{ path: '', component: AppHome },
+		{ path: 'blog', component: AppBlog },
+		{ path: 'blog/:id', component: AppBlogDetail },
+		{ path: '404', component: AppNotFound },
+		{ path: '**', redirectTo: '/404' }
+	];
+
+	if (userHasToken) {
+		result.push({ path: 'new-post', component: AppBlogNewPost });
+	}
+
+	return result;
+}
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: location.href.indexOf('github') > 0 })],
-  exports: [RouterModule]
+	imports: [RouterModule.forRoot(
+		routes, {
+		useHash: location.href.indexOf('github') > 0
+	})],
+	exports: [RouterModule]
 })
 export class AppRoutingModule { }
