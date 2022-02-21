@@ -2,7 +2,7 @@ class AuthService {
     private authKey = "lscrocha-blog-auth-key";
 
     getToken() {
-        return localStorage.getItem(this.authKey);
+        return localStorage.getItem(this.authKey) ?? '';
     }
 
     setToken(token: string) {

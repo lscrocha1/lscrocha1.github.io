@@ -39,6 +39,8 @@ export interface Post {
     images: Image[];
     comments: Comment[];
     tags: Tag[];
+    ptUrl: string;
+    enUrl: string;
 }
 
 export interface Content {

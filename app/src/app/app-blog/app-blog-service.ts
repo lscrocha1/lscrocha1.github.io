@@ -1,3 +1,4 @@
+import authService from "../base/auth-service";
 import translationService from "../base/translation-service";
 import { AddCommentDto, ReplyCommentDto, Post, CreatePostDto } from "../base/types";
 import { goTo } from "../base/util";
@@ -73,11 +74,31 @@ class AppBlogService {
 
         await fetch(encodeURI(url), {
             headers: {
-                'Content-Language': translationService.getCurrentSelectedLanguage()
+                'Content-Language': translationService.getCurrentSelectedLanguage(),
+                'Authorization': authService.getToken(),
+                'UUID': prompt('UUID') ??''
             },
             method: 'POST',
             body: dto
         });
+    }
+
+    async saveImage(formData: any) {
+        let url = `${env.apiurl}/v1/image`;
+
+        let response = await fetch(encodeURI(url), {
+            headers: {
+                'Content-Language': translationService.getCurrentSelectedLanguage(),
+                'Authorization': authService.getToken(),
+                'UUID': prompt('UUID') ??''
+            },
+            method: 'POST',
+            body: formData
+        });
+
+        let result = await response.text();
+
+        return result;
     }
 }
 

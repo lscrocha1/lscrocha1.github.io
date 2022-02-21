@@ -14,8 +14,14 @@ import List from '@editorjs/list';
 import Checklist from '@editorjs/checklist';
 // @ts-ignore
 import Quote from '@editorjs/quote';
+// @ts-ignore
+import InlineCode from '@editorjs/inline-code';
+// @ts-ignore
+import CodeTool from '@editorjs/code';
 import env from '../env/env';
 import { DomSanitizer } from '@angular/platform-browser';
+// @ts-ignore
+import ImageTool from '@editorjs/image';
 
 @Component({
     selector: 'app-blog-detail',
@@ -45,7 +51,9 @@ export class AppBlogDetail extends BaseComponent {
         id: '',
         images: [],
         tags: [],
-        updatedAt: ''
+        updatedAt: '',
+        enUrl: '',
+        ptUrl: ''
     }
 
     editorId: string = 'div-content-id';
@@ -108,6 +116,9 @@ export class AppBlogDetail extends BaseComponent {
     }
 
     getPostContent(): Content {
+        if (!this.post)
+            return null!;
+
         let currentLanguage = translationService.getCurrentSelectedLanguage();
 
         return this
@@ -210,6 +221,18 @@ export class AppBlogDetail extends BaseComponent {
                 checklist: {
                     class: Checklist,
                     inlineToolbar: true
+                },
+                inlineCode: {
+                    class: InlineCode,
+                    inlineToolbar: true
+                },
+                code: {
+                    class: CodeTool,
+                    inlineToolbar: true
+                },
+                image: {
+                    class: ImageTool,
+                    inlineToolbar: true
                 }
             },
             data: JSON.parse(this.getBody())
@@ -218,6 +241,14 @@ export class AppBlogDetail extends BaseComponent {
 
     async loadPost() {
         this.post = this.dataService.getPost();
+
+        if (this.post == null) {
+            let url = location.pathname.replace('/blog/', '');
+
+            this.post = await appBlogService.getPost(url);
+
+            this.dataService.setPost(this.post);
+        }
 
         this.loadContent();
     }

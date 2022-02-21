@@ -25,7 +25,9 @@ export class AppBlog extends BaseComponent {
             id: '',
             images: [],
             tags: [],
-            updatedAt: ''
+            updatedAt: '',
+            enUrl: '',
+            ptUrl: ''
         }
     ];
 
@@ -62,36 +64,18 @@ export class AppBlog extends BaseComponent {
     ngOnInit() {
         this.loadPosts();
     }
-
-    getFormatedTitle(post: Post) {
-        let title = this.postContents.find(e => e.postId == post.id)?.title;
-
-        let dict = {
-            "á": "a",
-            "ã": "a",
-            "ç": "c",
-            "é": "e",
-            "à": "a"
-        } as any
-
-        let result = title!
-            .toLowerCase()
-            .replace('!', '')
-            .replace('?', '')
-            .replace('(', '')
-            .replace(')', ' ')
-            .replace(/[^\w ]/g, char => dict[char] || char)
-            .split(' ')
-            .join('-');
-
-        if (result[result.length - 1] == '-')
-            result = result.substring(0, result.length - 1);
-
-        return result;
-    }
-
+    
     getTitle(post: Post) {
         return this.postContents.find(e => e.postId == post.id)?.title;
+    }
+
+    getUrl(post: Post) {
+        let currentLanguage = translationService.getCurrentSelectedLanguage();
+
+        if (currentLanguage == "en")
+            return post.enUrl;
+
+        return post.ptUrl;
     }
 
     getDescription(post: Post) {

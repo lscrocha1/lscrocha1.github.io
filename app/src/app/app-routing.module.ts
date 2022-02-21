@@ -15,14 +15,15 @@ function getRoutes() {
 	let result: Routes = [
 		{ path: '', component: AppHome },
 		{ path: 'blog', component: AppBlog },
-		{ path: 'blog/:id', component: AppBlogDetail },
-		{ path: '404', component: AppNotFound },
-		{ path: '**', redirectTo: '/404' }
+		{ path: 'blog/:id', component: AppBlogDetail }
 	];
 
 	if (userHasToken) {
 		result.push({ path: 'new-post', component: AppBlogNewPost });
 	}
+
+	result.push({ path: '404', component: AppNotFound });
+	result.push({ path: '**', redirectTo: '/404' });
 
 	return result;
 }

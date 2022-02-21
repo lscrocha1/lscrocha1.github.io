@@ -31,7 +31,9 @@ export class DataService {
             id: '',
             images: [],
             tags: [],
-            updatedAt: ''
+            updatedAt: '',
+            enUrl: '',
+            ptUrl: ''
         }
     }
 

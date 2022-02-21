@@ -9,8 +9,15 @@ import Checklist from '@editorjs/checklist';
 // @ts-ignore
 import Quote from '@editorjs/quote';
 import { BaseComponent } from '../base/base-component';
-import { ContentDto, CreatePostDto, PostContentLanguageEnum, PostDisplayTypeEnum } from '../base/types';
+import { PostDisplayTypeEnum } from '../base/types';
 import appBlogService from '../app-blog/app-blog-service';
+// @ts-ignore
+import InlineCode from '@editorjs/inline-code';
+// @ts-ignore
+import CodeTool from '@editorjs/code';
+// @ts-ignore
+import ImageTool from '@editorjs/image';
+import env from '../env/env';
 
 @Component({
     selector: 'app-blog-new-post',
@@ -99,6 +106,36 @@ export class AppBlogNewPost extends BaseComponent {
                 checklist: {
                     class: Checklist,
                     inlineToolbar: true
+                },               
+                inlineCode: {
+                    class: InlineCode,
+                    inlineToolbar: true
+                },
+                code: {
+                    class: CodeTool,
+                    inlineToolbar: true
+                }, 
+                image: {
+                    class: ImageTool,
+                    inlineToolbar: true,
+                    config: {
+                        uploader: {
+                            async uploadByFile(file: File) {
+                                let formData = new FormData();
+
+                                formData.append('file', file);
+
+                                let result = await appBlogService.saveImage(formData);
+
+                                return {
+                                    success: 1,
+                                    file: {
+                                        url: `${env.imageUrl}${result}`
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         });
@@ -121,6 +158,36 @@ export class AppBlogNewPost extends BaseComponent {
                 checklist: {
                     class: Checklist,
                     inlineToolbar: true
+                },               
+                inlineCode: {
+                    class: InlineCode,
+                    inlineToolbar: true
+                },
+                code: {
+                    class: CodeTool,
+                    inlineToolbar: true
+                }, 
+                image: {
+                    class: ImageTool,
+                    inlineToolbar: true,
+                    config: {
+                        uploader: {
+                            async uploadByFile(file: File) {
+                                let formData = new FormData();
+
+                                formData.append('file', file);
+
+                                let result = await appBlogService.saveImage(formData);
+
+                                return {
+                                    success: 1,
+                                    file: {
+                                        url: `${env.imageUrl}${result}`
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         });
