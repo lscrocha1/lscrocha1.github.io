@@ -114,3 +114,8 @@ export interface ImageDto {
 export interface TagDto {
     name: string;
 }
+
+export interface LoginDto {
+    username: string;
+    password: string;
+}

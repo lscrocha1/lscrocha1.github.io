@@ -85,11 +85,18 @@ export class AppBlogNewPost extends BaseComponent {
         formData.append('enBody', JSON.stringify(await this.editorEn.save()));
 
         await appBlogService.createPost(formData);
+
+        alert('saved');
     }
 
     createEditorContainer() {
-        this.editorPt = new EditorJS({
-            holder: this.editorPtId,
+        this.editorPt = this.getEditor(this.editorPtId);
+        this.editorEn = this.getEditor(this.editorEnId);
+    }
+
+    getEditor(id: string) {
+        return new EditorJS({
+            holder: id,
             tools: {
                 header: {
                     class: Header as any,
@@ -106,7 +113,7 @@ export class AppBlogNewPost extends BaseComponent {
                 checklist: {
                     class: Checklist,
                     inlineToolbar: true
-                },               
+                },
                 inlineCode: {
                     class: InlineCode,
                     inlineToolbar: true
@@ -114,59 +121,7 @@ export class AppBlogNewPost extends BaseComponent {
                 code: {
                     class: CodeTool,
                     inlineToolbar: true
-                }, 
-                image: {
-                    class: ImageTool,
-                    inlineToolbar: true,
-                    config: {
-                        uploader: {
-                            async uploadByFile(file: File) {
-                                let formData = new FormData();
-
-                                formData.append('file', file);
-
-                                let result = await appBlogService.saveImage(formData);
-
-                                return {
-                                    success: 1,
-                                    file: {
-                                        url: `${env.imageUrl}${result}`
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        });
-
-        this.editorEn = new EditorJS({
-            holder: this.editorEnId,
-            tools: {
-                header: {
-                    class: Header as any,
-                    inlineToolbar: true
                 },
-                quote: {
-                    class: Quote,
-                    inlineToolbar: true
-                },
-                list: {
-                    class: List,
-                    inlineToolbar: true
-                },
-                checklist: {
-                    class: Checklist,
-                    inlineToolbar: true
-                },               
-                inlineCode: {
-                    class: InlineCode,
-                    inlineToolbar: true
-                },
-                code: {
-                    class: CodeTool,
-                    inlineToolbar: true
-                }, 
                 image: {
                     class: ImageTool,
                     inlineToolbar: true,

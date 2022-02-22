@@ -19,6 +19,7 @@ import { AppNotFound } from './app-not-found/app-not-found';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppBlogNewPost } from './app-blog-new-post/app-blog-new-post';
 import { DataService } from './base/data-service';
+import { AppLogin } from './app-login/app-login';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { DataService } from './base/data-service';
     AppBlogHeader,
     AppBlogDetail,
     AppNotFound,
-    AppBlogNewPost
+    AppBlogNewPost,
+    AppLogin
   ],
   imports: [
     BrowserModule,

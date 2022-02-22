@@ -6,6 +6,7 @@ import { AppBlogDetail } from './app-blog-detail/app-blog-detail';
 import { AppNotFound } from './app-not-found/app-not-found';
 import { AppBlogNewPost } from './app-blog-new-post/app-blog-new-post';
 import authService from './base/auth-service';
+import { AppLogin } from './app-login/app-login';
 
 const routes: Routes = getRoutes();
 
@@ -15,7 +16,8 @@ function getRoutes() {
 	let result: Routes = [
 		{ path: '', component: AppHome },
 		{ path: 'blog', component: AppBlog },
-		{ path: 'blog/:id', component: AppBlogDetail }
+		{ path: 'blog/:id', component: AppBlogDetail },
+		{ path: 'login', component: AppLogin }
 	];
 
 	if (userHasToken) {

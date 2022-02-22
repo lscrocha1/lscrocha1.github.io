@@ -1,6 +1,6 @@
 <app-blog-header></app-blog-header>
 <div class="new-page-form">
-    <form [formGroup]="formNewPost" (ngSubmit)="save()">
+    <form ngNativeValidate [formGroup]="formNewPost" (ngSubmit)="save()">
         <div class="new-post-input">
             <div class="input-container">
                 <input name="ptTitle" maxlength="100" formControlName="ptTitle" id="ptTitle" class="input" type="text"

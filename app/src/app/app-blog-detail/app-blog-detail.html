@@ -82,7 +82,7 @@
     </div>
 </div>
 <div *ngIf="addingComment" class="add-comment-block-background">
-    <form [formGroup]="addCommentForm" class="add-comment-block" (ngSubmit)="addComment()" id="add-comment">
+    <form ngNativeValidate [formGroup]="addCommentForm" class="add-comment-block" (ngSubmit)="addComment()" id="add-comment">
         <div class="add-comment-block-header">
             <span>{{t('blogAddComment')}}</span>
         </div>
@@ -111,7 +111,7 @@
     </form>
 </div>
 <div *ngIf="replyingComment" class="add-comment-block-background">
-    <form [formGroup]="addCommentForm" class="add-comment-block" (ngSubmit)="replyComment()" id="add-comment">
+    <form ngNativeValidate [formGroup]="addCommentForm" class="add-comment-block" (ngSubmit)="replyComment()" id="add-comment">
         <div class="add-comment-block-header">
             <span>{{t('blogReplyComment')}}</span>
         </div>
