@@ -119,3 +119,16 @@ export interface LoginDto {
     username: string;
     password: string;
 }
+
+export interface CommentToBeApprovedDto {
+    id: string;
+    username: string;
+    content: string;
+    isReply: boolean;
+}
+
+export interface ApproveDenyCommentDto {
+    commentId: string;
+    approved: boolean;
+    isReply: boolean;
+}

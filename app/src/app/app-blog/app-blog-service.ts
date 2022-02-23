@@ -72,7 +72,7 @@ class AppBlogService {
     async createPost(dto: any) {
         let url = `${env.apiurl}/v1/post`;
 
-        await fetch(encodeURI(url), {
+        let result = await fetch(encodeURI(url), {
             headers: {
                 'Content-Language': translationService.getCurrentSelectedLanguage(),
                 'Authorization': authService.getToken(),
@@ -81,6 +81,9 @@ class AppBlogService {
             method: 'POST',
             body: dto
         });
+
+        if (result.status == 401)
+            goTo('/login');
     }
 
     async saveImage(formData: any) {
@@ -95,6 +98,9 @@ class AppBlogService {
             method: 'POST',
             body: formData
         });
+
+        if (response.status == 401)
+            goTo('/login');
 
         let result = await response.text();
 

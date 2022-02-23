@@ -20,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppBlogNewPost } from './app-blog-new-post/app-blog-new-post';
 import { DataService } from './base/data-service';
 import { AppLogin } from './app-login/app-login';
+import { AppApproveComments } from './app-approve-comments/app-approve-comments';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { AppLogin } from './app-login/app-login';
     AppBlogDetail,
     AppNotFound,
     AppBlogNewPost,
-    AppLogin
+    AppLogin,
+    AppApproveComments
   ],
   imports: [
     BrowserModule,

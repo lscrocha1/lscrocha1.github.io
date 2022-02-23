@@ -7,6 +7,7 @@ import { AppNotFound } from './app-not-found/app-not-found';
 import { AppBlogNewPost } from './app-blog-new-post/app-blog-new-post';
 import authService from './base/auth-service';
 import { AppLogin } from './app-login/app-login';
+import { AppApproveComments } from './app-approve-comments/app-approve-comments';
 
 const routes: Routes = getRoutes();
 
@@ -22,6 +23,7 @@ function getRoutes() {
 
 	if (userHasToken) {
 		result.push({ path: 'new-post', component: AppBlogNewPost });
+		result.push({ path: 'approve-comments', component: AppApproveComments });
 	}
 
 	result.push({ path: '404', component: AppNotFound });
