@@ -25,6 +25,24 @@
             <span class="iconify iconify-tag" data-icon="mdi:tag"></span>
             &nbsp;{{tag.name}}
         </div>
+        <div class="separator"></div>
+        <div class="share">
+            <a href="{{shareTwitterUrl()}}" rel="nofollow noreferrer noopener external" target="_blank"
+                class="share-button">
+                <span class="iconify iconify-share" data-icon="mdi:twitter"></span>
+            </a>
+            <a href="{{shareFacebookUrl()}}" rel="nofollow noreferrer noopener external" target="_blank"
+                class="share-button">
+                <span class="iconify iconify-share" data-icon="mdi:facebook"></span>
+            </a>
+            <a href="{{shareLinkedinUrl()}}" rel="nofollow noreferrer noopener external" target="_blank"
+                class="share-button">
+                <span class="iconify iconify-share" data-icon="mdi:linkedin"></span>
+            </a>
+            <div (click)="copyUrl()" class="share-button">
+                <span class="iconify iconify-share" data-icon="mdi:link-variant"></span>
+            </div>
+        </div>
     </div>
 </div>
 <div class="comment-submited-background" id="comment-submited" *ngIf="commentSubmited">
@@ -82,7 +100,8 @@
     </div>
 </div>
 <div *ngIf="addingComment" class="add-comment-block-background">
-    <form ngNativeValidate [formGroup]="addCommentForm" class="add-comment-block" (ngSubmit)="addComment()" id="add-comment">
+    <form ngNativeValidate [formGroup]="addCommentForm" class="add-comment-block" (ngSubmit)="addComment()"
+        id="add-comment">
         <div class="add-comment-block-header">
             <span>{{t('blogAddComment')}}</span>
         </div>
@@ -111,7 +130,8 @@
     </form>
 </div>
 <div *ngIf="replyingComment" class="add-comment-block-background">
-    <form ngNativeValidate [formGroup]="addCommentForm" class="add-comment-block" (ngSubmit)="replyComment()" id="add-comment">
+    <form ngNativeValidate [formGroup]="addCommentForm" class="add-comment-block" (ngSubmit)="replyComment()"
+        id="add-comment">
         <div class="add-comment-block-header">
             <span>{{t('blogReplyComment')}}</span>
         </div>
@@ -139,4 +159,5 @@
         </div>
     </form>
 </div>
+<div id="snackbar">{{t('urlCopied')}}</div>
 <app-footer></app-footer>

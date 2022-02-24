@@ -148,6 +148,54 @@ export class AppBlogDetail extends BaseComponent {
         setTimeout(() => scrollTo('add-comment'), 200);
     }
 
+    getUrl() {
+        let currentLanguage = translationService.getCurrentSelectedLanguage();
+
+        if (currentLanguage == "en")
+            return this.post.enUrl;
+
+        return this.post.ptUrl;
+    }
+
+    shareTwitterUrl() {
+        let url = `${location.origin}/blog/${this.getUrl()}`;
+
+        return encodeURI(`https://twitter.com/share?url=${url}&text=${this.getTitle()}`);
+    }
+
+    shareFacebookUrl() {
+        let url = `${location.origin}/blog/${this.getUrl()}`;
+
+        return encodeURI(`https://www.facebook.com/sharer/sharer.php?u=${url}`);
+    }
+
+    shareLinkedinUrl() {
+        let url = `${location.origin}/blog/${this.getUrl()}`;
+
+        return encodeURI(`https://www.linkedin.com/shareArticle?url=${url}&title=${this.getTitle()}&summary=${this.getDescription()}`);
+    }
+
+    copyUrl() {
+        let url = `${location.origin}/blog/${this.getUrl()}`;
+
+        navigator.clipboard.writeText(url);
+
+        this.showSnackbar();
+    }
+
+    showSnackbar() {
+        let snackbar = document.getElementById("snackbar");
+
+        if (!snackbar)
+            return;
+
+        snackbar.className = "show";
+
+        setTimeout(() => {
+            snackbar!.className = snackbar!.className.replace("show", "");
+        }, 3000);
+    }
+
     showReplyComment(commentId: string) {
         this.selectedCommentId = commentId;
 
