@@ -86,5 +86,7 @@
     "blogReplyingTo": "Replying to ",
     "blogCancel": "Cancel",
     "blogCommentAdded": "Your comment has been queued for review by site administrators and will be published after approval.",
-    "urlCopied": "URL copied successfully."
+    "urlCopied": "URL copied successfully.",
+    "share": "Share post",
+    "copy": "Copy link"
 }

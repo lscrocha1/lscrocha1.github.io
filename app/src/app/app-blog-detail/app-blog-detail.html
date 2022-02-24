@@ -27,19 +27,19 @@
         </div>
         <div class="separator"></div>
         <div class="share">
-            <a href="{{shareTwitterUrl()}}" rel="nofollow noreferrer noopener external" target="_blank"
+            <a title="{{t('share')}}" href="{{shareTwitterUrl()}}" rel="nofollow noreferrer noopener external" target="_blank"
                 class="share-button">
                 <span class="iconify iconify-share" data-icon="mdi:twitter"></span>
             </a>
-            <a href="{{shareFacebookUrl()}}" rel="nofollow noreferrer noopener external" target="_blank"
+            <a title="{{t('share')}}" href="{{shareFacebookUrl()}}" rel="nofollow noreferrer noopener external" target="_blank"
                 class="share-button">
                 <span class="iconify iconify-share" data-icon="mdi:facebook"></span>
             </a>
-            <a href="{{shareLinkedinUrl()}}" rel="nofollow noreferrer noopener external" target="_blank"
+            <a title="{{t('share')}}" href="{{shareLinkedinUrl()}}" rel="nofollow noreferrer noopener external" target="_blank"
                 class="share-button">
                 <span class="iconify iconify-share" data-icon="mdi:linkedin"></span>
             </a>
-            <div (click)="copyUrl()" class="share-button">
+            <div title="{{t('copy')}}" (click)="copyUrl()" class="share-button">
                 <span class="iconify iconify-share" data-icon="mdi:link-variant"></span>
             </div>
         </div>
