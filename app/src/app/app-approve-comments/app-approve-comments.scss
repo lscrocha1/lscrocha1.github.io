@@ -1,0 +1,29 @@
+.text-center {
+    text-align: center;
+}
+
+.comment-page {
+    padding: 24px;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.btn-comment {
+    padding: 12px;
+    border: none;
+    margin-right: 16px;
+    margin-top: 16px;
+    cursor: pointer;
+}
+
+.comment {
+    margin-bottom: 24px;
+}
+
+.comment-approve {
+    background-color: rgb(124, 230, 124);
+}
+
+.comment-deny {
+    background-color: rgb(240, 106, 106);
+}
