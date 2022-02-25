@@ -17,6 +17,7 @@ function getRoutes() {
 	let result: Routes = [
 		{ path: '', component: AppHome },
 		{ path: 'blog', component: AppBlog },
+		{ path: 'blog/tags/:id', component: AppBlog },
 		{ path: 'blog/:id', component: AppBlogDetail },
 		{ path: 'login', component: AppLogin }
 	];

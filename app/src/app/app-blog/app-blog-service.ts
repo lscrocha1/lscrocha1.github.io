@@ -5,13 +5,13 @@ import { goTo } from "../base/util";
 import env from "../env/env";
 
 class AppBlogService {
-    async getPosts(search: string = "", tag: number = 0, page: number = 1, limit: number = 10): Promise<Post[]> {
+    async getPosts(search: string = "", tag: string = "", page: number = 1, limit: number = 10): Promise<Post[]> {
         let url = `${env.apiurl}/v1/post?page=${page}&limit=${limit}`;
 
         if (search)
             url = `${url}&search=${search}`;
 
-        if (tag > 0)
+        if (tag)
             url = `${url}&tag=${tag}`;
 
         let response = await fetch(encodeURI(url), {

@@ -45,7 +45,7 @@ export class AppBlog extends BaseComponent {
 
     search: string = "";
 
-    tag: number = 0;
+    tag: string = "";
 
     limit: number = 10;
 
@@ -63,9 +63,13 @@ export class AppBlog extends BaseComponent {
     }
 
     ngOnInit() {
+        if (location.pathname.indexOf('/blog/tags') >= 0) {
+            this.tag = location.pathname.replace('/blog/tags/', '');
+        }
+
         this.loadPosts();
     }
-    
+
     getTitle(post: Post) {
         return this.postContents.find(e => e.postId == post.id)?.title;
     }
