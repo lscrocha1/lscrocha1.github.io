@@ -30,6 +30,23 @@
     justify-content: center;
 }
 
+.separator {
+    flex: 1;
+}
+
+.link-edit {
+    margin-right: 16px;
+    color: rgb(109, 201, 158);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.link-remove {
+    color: red;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 .post-description {
     text-align: justify;
 }

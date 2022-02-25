@@ -24,7 +24,8 @@
             <img *ngIf="!!post.display" class="post-image" alt="Image display" src="{{getSrc(post.display)}}" />
         </div>
     </div>
-    <div class="post-image-background video-background skeleton-loader skeleton-loader-image" *ngIf="post.displayType == 1">
+    <div class="post-image-background video-background skeleton-loader skeleton-loader-image"
+        *ngIf="post.displayType == 1">
         <iframe title="youtube video" class="iframe-youtube" [src]="getYoutubeLink(post)"> </iframe>
     </div>
     <div class="skeleton-loader">
@@ -41,6 +42,11 @@
             <span class="iconify iconify-tag" data-icon="mdi:tag"></span>
             &nbsp;{{tag.name}}
         </a>
+        <div class="separator"></div>
+        <div *ngIf="isAuthenticated()" class="links">
+            <a class="link link-edit">edit post</a>
+            <a class="link link-remove" (click)="removePost(post.id)">remove post</a>
+        </div>
     </div>
 </div>
 <div class="pagination-block">

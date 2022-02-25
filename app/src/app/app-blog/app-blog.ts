@@ -8,6 +8,7 @@ import translationService from '../base/translation-service';
 import { DataService } from '../base/data-service';
 import env from '../env/env';
 import { DomSanitizer } from '@angular/platform-browser';
+import authService from '../base/auth-service';
 
 @Component({
     selector: 'app-blog',
@@ -84,6 +85,18 @@ export class AppBlog extends BaseComponent {
 
     setPost(post: Post) {
         this.dataService.setPost(post);
+    }
+
+    isAuthenticated() {
+        return !!authService.getToken();
+    }
+
+    async removePost(id: string) {
+        if (confirm('This cannot be undone.')) {
+            await appBlogService.remove(id);
+
+            await this.loadPosts();
+        }
     }
 
     searchByTag(tag: string) {

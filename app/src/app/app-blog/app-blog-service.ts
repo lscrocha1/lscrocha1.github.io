@@ -106,6 +106,20 @@ class AppBlogService {
 
         return result;
     }
+
+    async remove(id: string) {
+        let url = `${env.apiurl}/v1/post/${id}`;
+
+        await fetch(encodeURI(url), {
+            headers: {
+                'Content-Language': translationService.getCurrentSelectedLanguage(),
+                'Content-Type': 'application/json',
+                'Authorization': authService.getToken(),
+                'UUID': prompt('UUID') ??''
+            },
+            method: 'DELETE'
+        });
+    }
 }
 
 export default new AppBlogService();
