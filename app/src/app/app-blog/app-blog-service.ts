@@ -76,7 +76,7 @@ class AppBlogService {
             headers: {
                 'Content-Language': translationService.getCurrentSelectedLanguage(),
                 'Authorization': authService.getToken(),
-                'UUID': prompt('UUID') ??''
+                'UUID': prompt('UUID') ?? ''
             },
             method: 'POST',
             body: dto
@@ -86,6 +86,20 @@ class AppBlogService {
             goTo('/login');
     }
 
+    async editPost(dto: any) {
+        let url = `${env.apiurl}/v1/post`;
+
+        await fetch(encodeURI(url), {
+            headers: {
+                'Content-Language': translationService.getCurrentSelectedLanguage(),
+                'Authorization': authService.getToken(),
+                'UUID': prompt('UUID') ?? ''
+            },
+            method: 'PUT',
+            body: dto
+        });
+    }
+
     async saveImage(formData: any) {
         let url = `${env.apiurl}/v1/image`;
 
@@ -93,7 +107,7 @@ class AppBlogService {
             headers: {
                 'Content-Language': translationService.getCurrentSelectedLanguage(),
                 'Authorization': authService.getToken(),
-                'UUID': prompt('UUID') ??''
+                'UUID': prompt('UUID') ?? ''
             },
             method: 'POST',
             body: formData
@@ -115,7 +129,7 @@ class AppBlogService {
                 'Content-Language': translationService.getCurrentSelectedLanguage(),
                 'Content-Type': 'application/json',
                 'Authorization': authService.getToken(),
-                'UUID': prompt('UUID') ??''
+                'UUID': prompt('UUID') ?? ''
             },
             method: 'DELETE'
         });

@@ -9,7 +9,7 @@ import Checklist from '@editorjs/checklist';
 // @ts-ignore
 import Quote from '@editorjs/quote';
 import { BaseComponent } from '../base/base-component';
-import { PostDisplayTypeEnum } from '../base/types';
+import { PostContentLanguageEnum, PostDisplayTypeEnum } from '../base/types';
 import appBlogService from '../app-blog/app-blog-service';
 // @ts-ignore
 import InlineCode from '@editorjs/inline-code';
@@ -18,6 +18,7 @@ import CodeTool from '@editorjs/code';
 // @ts-ignore
 import ImageTool from '@editorjs/image';
 import env from '../env/env';
+import { DataService } from '../base/data-service';
 
 @Component({
     selector: 'app-blog-new-post',
@@ -26,7 +27,8 @@ import env from '../env/env';
 })
 export class AppBlogNewPost extends BaseComponent {
     constructor(
-        private formBuilder: FormBuilder) {
+        private formBuilder: FormBuilder,
+        private dataService: DataService) {
         super();
         this.editorPt = null as any;
         this.editorEn = null as any;
@@ -37,6 +39,10 @@ export class AppBlogNewPost extends BaseComponent {
     editorPtId: string = 'div-pt-content-id';
     editorEnId: string = 'div-en-content-id';
     displayType: PostDisplayTypeEnum = PostDisplayTypeEnum.Youtube;
+    editing: boolean = false;
+    initialPtContent: any;
+    initialEnContent: any;
+    postId: string = "";
 
     formNewPost = this.formBuilder.group({
         "enTitle": '',
@@ -52,6 +58,36 @@ export class AppBlogNewPost extends BaseComponent {
     });
 
     ngOnInit() {
+        if (location.href.indexOf("/blog/edit") > 0) {
+            let post = this.dataService.getPost();
+
+            if (!post)
+                return;
+
+            this.postId = post.id;
+
+            let enContent = post.contents.find(e => e.language == PostContentLanguageEnum.English);
+            let ptContent = post.contents.find(e => e.language == PostContentLanguageEnum.Portuguese);
+
+            this.initialEnContent = enContent?.body;
+            this.initialPtContent = ptContent?.body;
+
+            this.formNewPost.controls['enTitle'].setValue(enContent?.title);
+            this.formNewPost.controls['enDescription'].setValue(enContent?.description);
+
+            this.formNewPost.controls['ptTitle'].setValue(ptContent?.title);
+            this.formNewPost.controls['ptDescription'].setValue(ptContent?.description);
+            this.formNewPost.controls['displayType'].setValue(post.displayType);
+
+            this.displayType = post.displayType;
+
+            let tags = post.tags.map(e => e.name).join(';');
+
+            this.formNewPost.controls['tags'].setValue(tags);
+
+            this.editing = true;
+        }
+
         this.createEditorContainer();
     }
 
@@ -83,20 +119,25 @@ export class AppBlogNewPost extends BaseComponent {
         formData.append('enTitle', this.formNewPost.controls['enTitle'].value);
         formData.append('enDescription', this.formNewPost.controls['enDescription'].value);
         formData.append('enBody', JSON.stringify(await this.editorEn.save()));
-
-        await appBlogService.createPost(formData);
+        formData.append('id', this.postId);
+        
+        if (!this.editing)
+            await appBlogService.createPost(formData);
+        else
+            await appBlogService.editPost(formData);
 
         alert('saved');
     }
 
     createEditorContainer() {
-        this.editorPt = this.getEditor(this.editorPtId);
-        this.editorEn = this.getEditor(this.editorEnId);
+        this.editorPt = this.getEditor(this.editorPtId, this.initialPtContent);
+        this.editorEn = this.getEditor(this.editorEnId, this.initialEnContent);
     }
 
-    getEditor(id: string) {
+    getEditor(id: string, data: any) {
         return new EditorJS({
             holder: id,
+            data: JSON.parse(data),
             tools: {
                 header: {
                     class: Header as any,

@@ -290,7 +290,7 @@ export class AppBlogDetail extends BaseComponent {
     async loadPost() {
         this.post = this.dataService.getPost();
 
-        if (this.post == null) {
+        if (!this.post || !this.post.id) {
             let url = location.pathname.replace('/blog/', '');
 
             this.post = await appBlogService.getPost(url);

@@ -9,14 +9,27 @@ export class DataService {
         localStorage.setItem(this.postKey, JSON.stringify(post));
     }
 
-    getPost() {
+    getPost(): Post {
         if (this.post && this.post.id)
             return this.post;
 
         let post = localStorage.getItem(this.postKey);
 
-        if (!post)
-            return null;
+        if (!post) {
+            return {
+                comments: [],
+                contents: [],
+                createdAt: '',
+                display: '',
+                displayType: PostDisplayTypeEnum.Image,
+                id: '',
+                images: [],
+                tags: [],
+                updatedAt: '',
+                enUrl: '',
+                ptUrl: ''
+            };
+        }
 
         return JSON.parse(post);
     }
