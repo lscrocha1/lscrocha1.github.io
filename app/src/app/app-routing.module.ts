@@ -23,9 +23,9 @@ function getRoutes() {
 	];
 
 	if (userHasToken) {
-		result.push({ path: 'blog/new-post', component: AppBlogNewPost });
-		result.push({ path: 'blog/approve-comments', component: AppApproveComments });
-		result.push({ path: 'blog/edit/:id', component: AppBlogNewPost });
+		result.push({ path: 'new-post', component: AppBlogNewPost });
+		result.push({ path: 'approve-comments', component: AppApproveComments });
+		result.push({ path: 'edit/:id', component: AppBlogNewPost });
 	}
 
 	result.push({ path: '404', component: AppNotFound });

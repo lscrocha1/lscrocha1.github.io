@@ -137,7 +137,7 @@ export class AppBlogNewPost extends BaseComponent {
     getEditor(id: string, data: any) {
         return new EditorJS({
             holder: id,
-            data: JSON.parse(data),
+            data: !!data ? JSON.parse(data) : null,
             tools: {
                 header: {
                     class: Header as any,

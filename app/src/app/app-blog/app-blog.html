@@ -44,7 +44,7 @@
         </a>
         <div class="separator"></div>
         <div *ngIf="isAuthenticated()" class="links">
-            <a class="link link-edit" routerLink="/blog/edit/{{getUrl(post)}}" (click)="setPost(post)">edit post</a>
+            <a class="link link-edit" routerLink="/edit/{{getUrl(post)}}" (click)="setPost(post)">edit post</a>
             <a class="link link-remove" (click)="removePost(post.id)">remove post</a>
         </div>
     </div>
