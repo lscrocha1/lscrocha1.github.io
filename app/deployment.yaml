@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: site-blog
+spec:
+  selector:
+    matchLabels:
+      app: site-blog
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: site-blog
+    spec:
+      containers:
+        - name: site-blog-app
+          image: lscrocha1/blog-site:v1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
