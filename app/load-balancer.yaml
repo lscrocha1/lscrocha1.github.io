@@ -1,14 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    service-lscrocha1-blog-site-key-lb: service-lscrocha1-blog-site-value-lb
-  name: service-name-loadbalancer
+  name: loadbalance-site-blog
 spec:
-  type: LoadBalancer
-  ports:
-  - name: service-port-name
-    port: 80
-    protocol: TCP
   selector:
-    lscrocha1-blog-key: lscrocha1-blog-site-value
+    app: site-blog
+  ports:
+    - port: 80
+      targetPort: 9376
+  type: LoadBalancer

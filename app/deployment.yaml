@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: site-blog-app
-          image: lscrocha1/blog-site:v1
+          image: lscrocha1/blog-site:arm64
           imagePullPolicy: Always
           ports:
             - containerPort: 80
