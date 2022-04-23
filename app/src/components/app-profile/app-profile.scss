@@ -105,7 +105,7 @@
 
     .hello {
         color: black;
-        padding-top: 32px;
+        padding-top: 0 !important;
     }
 
     .language-changer {
@@ -119,7 +119,7 @@
 
     .passionate-developer {
         color: black;
-        margin-bottom: 32px;
+        margin-bottom: 16px;
     }
 
     .profile-links a {
@@ -127,11 +127,11 @@
     }
 
     .profile-links {
-        margin-top: 32px;
-        margin-bottom: 32px;
+        margin-top: 16px;
+        margin-bottom: 16px;
     }
 
     .bottom-links {
-        margin-bottom: 32px;
+        margin-bottom: 16px;
     }
 }

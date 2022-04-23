@@ -1,0 +1,56 @@
+/*
+  Global App CSS
+  ----------------------
+  Use this file for styles that should be applied to all components.
+  For example, "font-family" within the "body" selector is a CSS property
+  most apps will want applied to all components.
+
+  Any global CSS variables should also be applied here.
+*/
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Rubik', sans-serif;
+}
+
+:root {
+  --primaryColor: #4361EE;
+  --secondaryColor: #FFE74C;
+  --secondaryColorShadow: #f0d529;
+  --titleFont: 'Rubik', sans-serif;
+  --bodyFont: 'Karla', sans-serif;
+}
+
+.container {
+  padding: 24px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.button-float-right {
+  float: right;
+  margin-top: 24px;
+}
+
+.primary-button {
+  background-color: var(--secondaryColor);
+  font-family: var(--bodyFont);
+  border: 1px solid black;
+  padding: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  -webkit-transition: ease-in-out .1s;
+  transition: ease-in-out .1s;
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.primary-button:hover {
+  background-color: var(--secondaryColorShadow);
+}
+
+.text-center {
+  text-align: center;
+}
