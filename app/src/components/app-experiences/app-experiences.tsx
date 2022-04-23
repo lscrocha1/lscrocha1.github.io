@@ -19,6 +19,10 @@ export class AppExperiences {
         this.jobs = await fetch(`/assets/translation/${this.currentLanguage}.json`).then(e => e.json()).then(e => e.jobs);
     }
 
+    getDownloadLink() {
+        return `/assets/cv/cv-${this.currentLanguage}.pdf`;
+    }
+
     renderJob(job: Job) {
         return (
             <div class="job">
@@ -43,9 +47,14 @@ export class AppExperiences {
 
     render() {
         return (
-            <div class="container">
-                <h1 class="text-center-mobile">{t('experiencesTitle')}</h1>
+            <div class="container" id="experiences">
+                <h1 class="text-center">{t('experiencesTitle')}</h1>
                 {this.jobs && this.jobs.map(job => this.renderJob(job))}
+                <div class="text-center">
+                    <a href={this.getDownloadLink()} download="Lucas Rocha - lscrocha.com.br- CV.pdf" class="primary-button text-center">
+                        {t('downloadCv')}
+                    </a>
+                </div>
             </div>
         )
     }

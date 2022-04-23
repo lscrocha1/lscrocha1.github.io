@@ -50,9 +50,6 @@ body {
   background-color: var(--secondaryColorShadow);
 }
 
-@media (max-width: 768px) {
-
-  .text-center-mobile {
-    text-align: center;
-  }
+.text-center {
+  text-align: center;
 }

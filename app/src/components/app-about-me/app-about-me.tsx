@@ -16,10 +16,10 @@ export class AppAboutMe {
     render() {
         return (
             <div class="container about-me" id="aboutMe">
-                <h1 class="text-center-mobile">{t('aboutMeTitle')}</h1>
+                <h1 class="text-center">{t('aboutMeTitle')}</h1>
                 <h3 class="about-me-body">{this.getBody()}</h3>
                 <div class="button-float-right button-follow">
-                    <a href="#" class="primary-button">
+                    <a target="_blank" href="https://twitch.tv/lecas" rel="nofollow noreferrer noopener external" class="primary-button">
                         {t('followMeTwitch')}
                     </a>
                 </div>

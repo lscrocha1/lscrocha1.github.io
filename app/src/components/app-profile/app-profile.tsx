@@ -32,17 +32,16 @@ export class AppProfile {
                     <img class="image-profile" width={200} height={200} src="/assets/images/foto-perfil.jpg"></img>
                 </div>
                 <div class="profile-links">
-                    <a href="#">{t('portfolioLink')}</a>
-                    <a href="#">{t('experiencesLink')}</a>
-                    <a href="#">{t('aboutMeLink')}</a>
-                    <a href="#">{t('contactLink')}</a>
+                    <a href="#aboutMe">{t('aboutMeLink')}</a>
+                    <a href="#experiences">{t('experiencesLink')}</a>
+                    <a href="#contact">{t('contactLink')}</a>
                 </div>
                 <div class="bottom-links">
-                    <a href="#"><span class="iconify icon-white" data-icon="mdi:email"></span></a>
-                    <a href="#"><span class="iconify icon-white" data-icon="mdi:instagram"></span></a>
-                    <a href="#"><span class="iconify icon-white" data-icon="mdi:linkedin"></span></a>
-                    <a href="#"><span class="iconify icon-white" data-icon="mdi:twitch"></span></a>
-                    <a href="#"><span class="iconify icon-white" data-icon="mdi:youtube"></span></a>
+                    <a href="mailto:contato@lscrocha.com.br" rel="nofollow noreferrer noopener external"><span class="iconify icon-white" data-icon="mdi:email"></span></a>
+                    <a target="_blank" href="https://www.instagram.com/lscrocha1/" rel="nofollow noreferrer noopener external"><span class="iconify icon-white" data-icon="mdi:instagram"></span></a>
+                    <a target="_blank" href="https://www.linkedin.com/in/lucascrocha/" rel="nofollow noreferrer noopener external"><span class="iconify icon-white" data-icon="mdi:linkedin"></span></a>
+                    <a target="_blank" href="https://twitch.tv/lecas" rel="nofollow noreferrer noopener external"><span class="iconify icon-white" data-icon="mdi:twitch"></span></a>
+                    <a target="_blank" href="https://www.youtube.com/channel/UCmBKSMYDh8T6aKJi88taw7w" rel="nofollow noreferrer noopener external"><span class="iconify icon-white" data-icon="mdi:youtube"></span></a>
                 </div>
                 <div class="language-changer" onClick={() => this.changeLanguage()}>
                     <span class="iconify iconify-globe" data-icon="bi:globe"></span>

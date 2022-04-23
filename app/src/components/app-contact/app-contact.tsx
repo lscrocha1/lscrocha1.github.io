@@ -9,7 +9,7 @@ export class AppContact {
     render() {
         return (
             <div class="container contact-component" id="contact">
-                <h1 class="text-center-mobile">{t('contactGetInTouch')}</h1>
+                <h1 class="text-center">{t('contactGetInTouch')}</h1>
                 <form class="form-full">
                     <div class="form-group">
                         <label htmlFor="name">{t('contactName')}</label>
