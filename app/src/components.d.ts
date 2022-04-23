@@ -8,6 +8,8 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AppAboutMe {
     }
+    interface AppContact {
+    }
     interface AppHome {
     }
     interface AppProfile {
@@ -21,6 +23,12 @@ declare global {
     var HTMLAppAboutMeElement: {
         prototype: HTMLAppAboutMeElement;
         new (): HTMLAppAboutMeElement;
+    };
+    interface HTMLAppContactElement extends Components.AppContact, HTMLStencilElement {
+    }
+    var HTMLAppContactElement: {
+        prototype: HTMLAppContactElement;
+        new (): HTMLAppContactElement;
     };
     interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
     }
@@ -42,6 +50,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "app-about-me": HTMLAppAboutMeElement;
+        "app-contact": HTMLAppContactElement;
         "app-home": HTMLAppHomeElement;
         "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
@@ -49,6 +58,8 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AppAboutMe {
+    }
+    interface AppContact {
     }
     interface AppHome {
     }
@@ -58,6 +69,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "app-about-me": AppAboutMe;
+        "app-contact": AppContact;
         "app-home": AppHome;
         "app-profile": AppProfile;
         "app-root": AppRoot;
@@ -68,6 +80,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "app-about-me": LocalJSX.AppAboutMe & JSXBase.HTMLAttributes<HTMLAppAboutMeElement>;
+            "app-contact": LocalJSX.AppContact & JSXBase.HTMLAttributes<HTMLAppContactElement>;
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;

@@ -17,6 +17,32 @@ body {
 :root {
   --primaryColor: #4361EE;
   --secondaryColor: #FFE74C;
+  --secondaryColorShadow: #f8e250;
   --titleFont: 'Rubik', sans-serif;
   --bodyFont: 'Karla', sans-serif;
+}
+
+.container {
+  padding: 24px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.button-float-right {
+  float: right;
+}
+
+.primary-button {
+  background-color: var(--secondaryColor);
+  font-family: var(--bodyFont);
+  border: 1px solid black;
+  padding: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: ease-in-out .1s;
+  font-size: 20px;
+}
+
+.primary-button:hover {
+  background-color: var(--secondaryColorShadow);
 }

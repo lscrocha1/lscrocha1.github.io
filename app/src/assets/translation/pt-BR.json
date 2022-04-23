@@ -4,5 +4,14 @@
     "portfolioLink": "portfólio",
     "experiencesLink": "experiências",
     "aboutMeLink": "sobre mim",
-    "contactLink": "contato"
+    "contactLink": "contato",
+    "aboutMeTitle": "Sobre mim",
+    "aboutMeBody": "Sou completamente apaixonado pelo o que faço. \n\nSempre trabalhei como desenvolvedor fullstack, utilizando C# e diferentes frameworks Javascript/Typescript no frontend, tais como Angular, Stencil e Vue.\n\nTenho em torno {age} de experiencia e já passei por diversos projetos e empresas. \n\nFora de ambiente profissional, sou fascinado por jogos de computador e jogos de mesa. E também gosto muito de pintar miniaturas. Outro hobby que tenho e gosto muito é de fazer lives onde fico programando e conversando com o chat.",
+    "followMeTwitch": "Siga-me na Twitch",
+    "contactMessage": "Mensagem",
+    "contactEmail": "E-mail",
+    "contactName": "Nome",
+    "contactSend": "Enviar",
+    "contactGetInTouch": "Entre em contato",
+    "contactAccept": "Eu autorizo que este site armazene minhas informações enviadas para que possam responder à minha pergunta"
 }

@@ -11,6 +11,7 @@ export class AppHome {
 				<app-profile></app-profile>
 				<div>
 					<app-about-me></app-about-me>
+					<app-contact></app-contact>
 				</div>
 			</div>
 		];
