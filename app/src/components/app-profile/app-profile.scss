@@ -52,6 +52,7 @@
     max-width: 320px;
     min-width: 320px;
     height: 100%;
+    position: fixed;
     min-height: 100vh;
 }
 
@@ -99,6 +100,7 @@
         justify-content: space-between;
         width: 100%;
         min-width: 100vw;
+        position: unset;
     }
 
     .hello {

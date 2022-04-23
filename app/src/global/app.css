@@ -17,7 +17,7 @@ body {
 :root {
   --primaryColor: #4361EE;
   --secondaryColor: #FFE74C;
-  --secondaryColorShadow: #f8e250;
+  --secondaryColorShadow: #f0d529;
   --titleFont: 'Rubik', sans-serif;
   --bodyFont: 'Karla', sans-serif;
 }
@@ -30,6 +30,7 @@ body {
 
 .button-float-right {
   float: right;
+  margin-top: 24px;
 }
 
 .primary-button {
@@ -41,8 +42,17 @@ body {
   border-radius: 5px;
   transition: ease-in-out .1s;
   font-size: 20px;
+  text-decoration: none;
+  color: black;
 }
 
 .primary-button:hover {
   background-color: var(--secondaryColorShadow);
+}
+
+@media (max-width: 768px) {
+
+  .text-center-mobile {
+    text-align: center;
+  }
 }

@@ -10,6 +10,10 @@ export namespace Components {
     }
     interface AppContact {
     }
+    interface AppExperiences {
+    }
+    interface AppFooter {
+    }
     interface AppHome {
     }
     interface AppProfile {
@@ -29,6 +33,18 @@ declare global {
     var HTMLAppContactElement: {
         prototype: HTMLAppContactElement;
         new (): HTMLAppContactElement;
+    };
+    interface HTMLAppExperiencesElement extends Components.AppExperiences, HTMLStencilElement {
+    }
+    var HTMLAppExperiencesElement: {
+        prototype: HTMLAppExperiencesElement;
+        new (): HTMLAppExperiencesElement;
+    };
+    interface HTMLAppFooterElement extends Components.AppFooter, HTMLStencilElement {
+    }
+    var HTMLAppFooterElement: {
+        prototype: HTMLAppFooterElement;
+        new (): HTMLAppFooterElement;
     };
     interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
     }
@@ -51,6 +67,8 @@ declare global {
     interface HTMLElementTagNameMap {
         "app-about-me": HTMLAppAboutMeElement;
         "app-contact": HTMLAppContactElement;
+        "app-experiences": HTMLAppExperiencesElement;
+        "app-footer": HTMLAppFooterElement;
         "app-home": HTMLAppHomeElement;
         "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
@@ -61,6 +79,10 @@ declare namespace LocalJSX {
     }
     interface AppContact {
     }
+    interface AppExperiences {
+    }
+    interface AppFooter {
+    }
     interface AppHome {
     }
     interface AppProfile {
@@ -70,6 +92,8 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "app-about-me": AppAboutMe;
         "app-contact": AppContact;
+        "app-experiences": AppExperiences;
+        "app-footer": AppFooter;
         "app-home": AppHome;
         "app-profile": AppProfile;
         "app-root": AppRoot;
@@ -81,6 +105,8 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "app-about-me": LocalJSX.AppAboutMe & JSXBase.HTMLAttributes<HTMLAppAboutMeElement>;
             "app-contact": LocalJSX.AppContact & JSXBase.HTMLAttributes<HTMLAppContactElement>;
+            "app-experiences": LocalJSX.AppExperiences & JSXBase.HTMLAttributes<HTMLAppExperiencesElement>;
+            "app-footer": LocalJSX.AppFooter & JSXBase.HTMLAttributes<HTMLAppFooterElement>;
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;

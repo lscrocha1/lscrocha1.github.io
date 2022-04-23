@@ -15,13 +15,13 @@ export class AppAboutMe {
 
     render() {
         return (
-            <div class="container" id="aboutMe">
-                <h1>{t('aboutMeTitle')}</h1>
+            <div class="container about-me" id="aboutMe">
+                <h1 class="text-center-mobile">{t('aboutMeTitle')}</h1>
                 <h3 class="about-me-body">{this.getBody()}</h3>
-                <div class="button-float-right">
-                    <button class="primary-button">
+                <div class="button-float-right button-follow">
+                    <a href="#" class="primary-button">
                         {t('followMeTwitch')}
-                    </button>
+                    </a>
                 </div>
             </div>
         )
