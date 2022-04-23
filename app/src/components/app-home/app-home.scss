@@ -1,0 +1,21 @@
+.components {
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+}
+
+.components-pages {
+    padding-left: 320px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .components {
+        flex-direction: column;
+    }
+
+    .components-pages {
+        padding-left: unset;
+        width: unset;
+    }
+}
