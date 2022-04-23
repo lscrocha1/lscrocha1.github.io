@@ -9,6 +9,8 @@ export const config: Config = {
   globalStyle: 'src/global/app.css',
   globalScript: 'src/global/app.ts',
   taskQueue: 'async',
+  buildEs5: true,
+  hashFileNames: false,
   outputTargets: [
     {
       type: 'www',
