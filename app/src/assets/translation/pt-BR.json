@@ -19,18 +19,18 @@
     "contactSubmited": "Obrigado por entrar em contato!",
     "jobs": [
         {
+            "title": "Fullstack Developer",
+            "company": "AgileEngine",
+            "companyLink": "https://agileengine.com/",
+            "period": "Abril, 2022 - Atualmente",
+            "description": "Desenvolvedor fullstack com .NET Core e Angular."
+        },
+        {
             "title": "Analista de Sistemas Sênior",
             "company": "CI&T",
             "companyLink": "https://ciandt.com/",
-            "period": "Janeiro, 2022 - Atualmente",
-            "description": "Trabalhando em um cliente internacional como desenvolvedor backend .NET Core com microserviços, postgres e outras tecnologias."
-        },
-        {
-            "title": "Especialista .NET",
-            "company": "Materialize",
-            "companyLink": "https://www.materialize.pro/",
-            "period": "Outubro, 2021 - Atualmente",
-            "description": "Parceiro como desenvolvedor especialista .NET para desenvolvimento de produtos e novos sistemas."
+            "period": "Fevereiro, 2022 - Março 2022",
+            "description": "Desenvolvimento de softwares utilizando .NET Core (.NET 6), aplicações com microserviços, Kafka."
         },
         {
             "title": "Analista Desenvolvedor Sênior",
