@@ -19,18 +19,18 @@
     "contactSubmited": "Thank you for getting in touch!",
     "jobs": [
         {
+            "title": "Fullstack Developer",
+            "company": "AgileEngine",
+            "companyLink": "https://agileengine.com/",
+            "period": "Abril, 2022 - Currently",
+            "description": "Fullstack Developer using .NET Core and Angular."
+        },
+        {
             "title": "Senior System Analyst",
             "company": "CI&T",
             "companyLink": "https://ciandt.com/",
-            "period": "January, 2022 - Current",
+            "period": "February, 2022 - March 2022",
             "description": "Working for a international client as .NET Core backend developer with microservices, postgres and other technologies."
-        },
-        {
-            "title": ".NET Specialist",
-            "company": "Materialize",
-            "companyLink": "https://www.materialize.pro/",
-            "period": "October, 2021 - Current",
-            "description": "Partner as a .NET Specialist to develop new solutions and systems."
         },
         {
             "title": "Analista Desenvolvedor Sênior",
