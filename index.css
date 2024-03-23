@@ -1,0 +1,45 @@
+body {
+    margin: 0 auto;
+    max-width: 1280px;
+    font-family: "Inter", sans-serif;
+}
+
+header {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.75);
+    background-color: #FBFBFB;
+}
+
+nav {    
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+nav a {
+    text-decoration: none;
+    color: #1E1E1E;
+    margin-right: 16px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+nav a:first-child {
+    flex: 1;
+    margin-right: 0;
+    font-weight: 700;
+}
+
+nav a:last-child {
+    margin-right: 0;
+}
+
+.logo {
+    border-radius: 100%;
+    margin-right: 12px;
+}
